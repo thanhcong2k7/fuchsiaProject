@@ -1,3 +1,4 @@
+![fuchsia Project](https://raw.githubusercontent.com/thanhcong2k7/fuchsiaProject/main/Resources/cringe.jpg)
 # fuchsia Project
  VN-ese social network app made by a fkin 15-year-old dev in his free time
 
