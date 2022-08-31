@@ -18,6 +18,7 @@ namespace fuchsia
 		{
 			InitializeComponent();
 			initPost("test",userName,"10:03 30/8/2022");
+			(new loginForm()).Show();
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)

@@ -1,0 +1,15 @@
+D:\Projects\fuchsia\fuchsia\bin\x86\Debug\fuchsia.exe
+D:\Projects\fuchsia\fuchsia\bin\x86\Debug\fuchsia.pdb
+D:\Projects\fuchsia\fuchsia\bin\x86\Debug\Guna.UI2.dll
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.csproj.AssemblyReference.cache
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.aboutWindow.resources
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.Form1.resources
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.loginForm.resources
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.postCont.resources
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.Properties.Resources.resources
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.splashScr.resources
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.csproj.GenerateResource.cache
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.csproj.CoreCompileInputs.cache
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.csproj.CopyComplete
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.exe
+D:\Projects\fuchsia\fuchsia\obj\x86\Debug\fuchsia.pdb

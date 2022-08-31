@@ -111,7 +111,7 @@ namespace fuchsia
 			this.appName.Name = "appName";
 			this.appName.Size = new System.Drawing.Size(133, 13);
 			this.appName.TabIndex = 10;
-			this.appName.Text = "fuchsia v0.1.30822-alpha";
+			this.appName.Text = "fuchsia v0.1.31822-alpha";
 			// 
 			// closeBtn
 			// 
@@ -133,7 +133,6 @@ namespace fuchsia
 			// 
 			// settings
 			// 
-			this.settings.Animated = true;
 			this.settings.BackColor = System.Drawing.Color.Transparent;
 			this.settings.BorderRadius = 10;
 			this.settings.CheckedState.Parent = this.settings;
@@ -153,7 +152,6 @@ namespace fuchsia
 			// infoBtn
 			// 
 			this.infoBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.infoBtn.Animated = true;
 			this.infoBtn.BackColor = System.Drawing.Color.Transparent;
 			this.infoBtn.BorderRadius = 10;
 			this.infoBtn.CheckedState.Parent = this.infoBtn;
@@ -190,7 +188,7 @@ namespace fuchsia
 			this.notiBtn.ShadowDecoration.Parent = this.notiBtn;
 			this.notiBtn.Size = new System.Drawing.Size(242, 45);
 			this.notiBtn.TabIndex = 6;
-			this.notiBtn.Text = "Thông báo (18+)";
+			this.notiBtn.Text = "Thông báo";
 			this.notiBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
 			// msgBtn
@@ -212,7 +210,7 @@ namespace fuchsia
 			this.msgBtn.ShadowDecoration.Parent = this.msgBtn;
 			this.msgBtn.Size = new System.Drawing.Size(242, 45);
 			this.msgBtn.TabIndex = 5;
-			this.msgBtn.Text = "Tin nhắn (1)";
+			this.msgBtn.Text = "Tin nhắn";
 			this.msgBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			// 
 			// uidCtrl
