@@ -3,7 +3,9 @@
 
 ## Usage
 Just download binary from Releases.
+
 (Currently Windows only. Support for Linux will be added later)
+
 (Of course I will make a web version, but maybe it'll take a long time. So, just wait :D)
 ## Compiling
 Download and install Visual Studio 2019. Then just open the .csproj project file ;P
