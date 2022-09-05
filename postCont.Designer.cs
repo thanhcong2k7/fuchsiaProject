@@ -36,7 +36,6 @@ namespace fuchsia
 			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.captLabel = new System.Windows.Forms.Label();
-			this.settings = new Guna.UI2.WinForms.Guna2Button();
 			this.datePosted = new System.Windows.Forms.Label();
 			this.nameLabel = new System.Windows.Forms.Label();
 			this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -52,7 +51,6 @@ namespace fuchsia
 			this.guna2Panel1.Controls.Add(this.guna2Button1);
 			this.guna2Panel1.Controls.Add(this.panel1);
 			this.guna2Panel1.Controls.Add(this.captLabel);
-			this.guna2Panel1.Controls.Add(this.settings);
 			this.guna2Panel1.Controls.Add(this.datePosted);
 			this.guna2Panel1.Controls.Add(this.nameLabel);
 			this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
@@ -61,7 +59,7 @@ namespace fuchsia
 			this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
 			this.guna2Panel1.Name = "guna2Panel1";
 			this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-			this.guna2Panel1.Size = new System.Drawing.Size(813, 198);
+			this.guna2Panel1.Size = new System.Drawing.Size(780, 200);
 			this.guna2Panel1.TabIndex = 0;
 			// 
 			// guna2Button3
@@ -79,12 +77,13 @@ namespace fuchsia
 			this.guna2Button3.HoverState.Parent = this.guna2Button3;
 			this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
 			this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button3.Location = new System.Drawing.Point(543, 149);
+			this.guna2Button3.Location = new System.Drawing.Point(661, 17);
 			this.guna2Button3.Name = "guna2Button3";
 			this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-			this.guna2Button3.Size = new System.Drawing.Size(245, 30);
+			this.guna2Button3.Size = new System.Drawing.Size(87, 42);
 			this.guna2Button3.TabIndex = 12;
 			this.guna2Button3.Text = "Chia sẻ";
+			this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// guna2Button2
 			// 
@@ -101,10 +100,10 @@ namespace fuchsia
 			this.guna2Button2.HoverState.Parent = this.guna2Button2;
 			this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
 			this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button2.Location = new System.Drawing.Point(286, 149);
+			this.guna2Button2.Location = new System.Drawing.Point(367, 151);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-			this.guna2Button2.Size = new System.Drawing.Size(245, 30);
+			this.guna2Button2.Size = new System.Drawing.Size(381, 30);
 			this.guna2Button2.TabIndex = 11;
 			this.guna2Button2.Text = "Bình luận";
 			// 
@@ -123,10 +122,10 @@ namespace fuchsia
 			this.guna2Button1.HoverState.Parent = this.guna2Button1;
 			this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
 			this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button1.Location = new System.Drawing.Point(27, 149);
+			this.guna2Button1.Location = new System.Drawing.Point(14, 151);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-			this.guna2Button1.Size = new System.Drawing.Size(245, 30);
+			this.guna2Button1.Size = new System.Drawing.Size(347, 30);
 			this.guna2Button1.TabIndex = 10;
 			this.guna2Button1.Text = "Thích";
 			// 
@@ -135,9 +134,9 @@ namespace fuchsia
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.Color.Gray;
-			this.panel1.Location = new System.Drawing.Point(32, 129);
+			this.panel1.Location = new System.Drawing.Point(32, 131);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(749, 2);
+			this.panel1.Size = new System.Drawing.Size(716, 2);
 			this.panel1.TabIndex = 9;
 			// 
 			// captLabel
@@ -146,30 +145,11 @@ namespace fuchsia
 			this.captLabel.BackColor = System.Drawing.Color.Transparent;
 			this.captLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.captLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-			this.captLabel.Location = new System.Drawing.Point(41, 79);
+			this.captLabel.Location = new System.Drawing.Point(41, 75);
 			this.captLabel.Name = "captLabel";
 			this.captLabel.Size = new System.Drawing.Size(54, 32);
 			this.captLabel.TabIndex = 8;
 			this.captLabel.Text = "test";
-			// 
-			// settings
-			// 
-			this.settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.settings.Animated = true;
-			this.settings.BackColor = System.Drawing.Color.Transparent;
-			this.settings.BorderRadius = 10;
-			this.settings.CheckedState.Parent = this.settings;
-			this.settings.CustomImages.Parent = this.settings;
-			this.settings.FillColor = System.Drawing.Color.Transparent;
-			this.settings.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.settings.ForeColor = System.Drawing.Color.White;
-			this.settings.HoverState.Parent = this.settings;
-			this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
-			this.settings.Location = new System.Drawing.Point(766, 19);
-			this.settings.Name = "settings";
-			this.settings.ShadowDecoration.Parent = this.settings;
-			this.settings.Size = new System.Drawing.Size(30, 30);
-			this.settings.TabIndex = 7;
 			// 
 			// datePosted
 			// 
@@ -215,7 +195,7 @@ namespace fuchsia
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
 			this.Controls.Add(this.guna2Panel1);
 			this.Name = "postCont";
-			this.Size = new System.Drawing.Size(813, 198);
+			this.Size = new System.Drawing.Size(780, 200);
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -226,7 +206,6 @@ namespace fuchsia
 		#endregion
 
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-		private Guna.UI2.WinForms.Guna2Button settings;
 		private System.Windows.Forms.Label datePosted;
 		private System.Windows.Forms.Label nameLabel;
 		private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

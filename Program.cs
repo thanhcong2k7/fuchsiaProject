@@ -16,11 +16,9 @@ namespace fuchsia
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			splashScr.ShowSplashScreen();
-			System.Threading.Thread.Sleep(3000);
+			System.Threading.Thread.Sleep(2000);
 			splashScr.CloseForm();
-			Form1 fr = new Form1();
-			Application.Run(fr);
-			fr.BringToFront();
+			Application.Run(new loginForm());
 		}
 	}
 }

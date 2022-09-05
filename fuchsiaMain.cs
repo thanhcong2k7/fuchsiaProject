@@ -6,19 +6,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Net;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace fuchsia
 {
-	public partial class Form1 : Form
+	public partial class fuchsiaMain : Form
 	{
 		public string userID = "abcxyz";
 		public string userName = "Nguyễn Thành Công";
-		public Form1()
+		private string userKey = "";
+		public fuchsiaMain(string privateKey)
 		{
 			InitializeComponent();
-			initPost("test",userName,"10:03 30/8/2022");
-			(new loginForm()).Show();
+			initPost("chit",userName,getUTC_Time());
+			//(new loginForm()).Show();
+			userKey = privateKey;
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)
@@ -43,8 +48,9 @@ namespace fuchsia
 		private void closeBtn_Click(object sender, EventArgs e)
 		{
 			this.Close();
+			Application.Exit();
 		}
-		private int pos = 0;
+		private int pos = 10;
 		private void postBtn_Click(object sender, EventArgs e)
 		{
 			//send post stuff
@@ -58,10 +64,31 @@ namespace fuchsia
 				name=nameTxt,
 				dateposted=dateT,
 				userWatchingID = userID,
-				Location = new Point(0,pos),
+				Location = new Point(16,pos),
 				Anchor = AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right
 			});
 			pos += 220;
+		}
+		private string getUTC_Time()
+		{
+			WebClient client = new WebClient();
+			dynamic dynObj;
+			client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+			try
+			{
+				Stream data = client.OpenRead("http://worldtimeapi.org/api/ip");
+				StreamReader reader = new StreamReader(data);
+				string s = reader.ReadToEnd();
+				//Console.WriteLine(s);
+				dynObj = JsonConvert.DeserializeObject(s);
+				data.Close();
+				reader.Close();
+				return dynObj.utc_datetime;
+			} catch (Exception e)
+			{
+				MessageBox.Show(e.Message);
+			}
+			return "";
 		}
 	}
 }

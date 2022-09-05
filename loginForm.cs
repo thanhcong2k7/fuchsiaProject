@@ -20,5 +20,21 @@ namespace fuchsia
 		private void loginForm_Load(object sender, EventArgs e)
 		{
 		}
+
+		private void guna2Button2_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void guna2Button1_Click(object sender, EventArgs e)
+		{
+			new fuchsiaMain(genKey(usrBox.Text,pwdBox.Text)).Show();
+			this.Hide();
+		}
+		public string genKey(string username, string password)
+		{
+			//authorize information and get key stuff
+			return "admin";
+		}
 	}
 }

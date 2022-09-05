@@ -12,11 +12,11 @@ namespace fuchsia
 {
 	public partial class splashScr : Form
 	{
-        public string version = "v0.1.25822-alpha";
+        public string version = "v0.1.02922-alpha";
 		public splashScr()
 		{
 			InitializeComponent();
-            //verTxt.Text = ;
+            verTxt.Text = version;
             this.ControlBox = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
