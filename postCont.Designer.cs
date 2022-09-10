@@ -70,42 +70,44 @@ namespace fuchsia
 			this.guna2Button3.BorderRadius = 13;
 			this.guna2Button3.CheckedState.Parent = this.guna2Button3;
 			this.guna2Button3.CustomImages.Parent = this.guna2Button3;
-			this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+			this.guna2Button3.FillColor = System.Drawing.Color.Empty;
 			this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guna2Button3.ForeColor = System.Drawing.Color.White;
 			this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(1)))), ((int)(((byte)(116)))));
 			this.guna2Button3.HoverState.Parent = this.guna2Button3;
 			this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
 			this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.guna2Button3.ImageSize = new System.Drawing.Size(18, 18);
 			this.guna2Button3.Location = new System.Drawing.Point(661, 17);
 			this.guna2Button3.Name = "guna2Button3";
 			this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-			this.guna2Button3.Size = new System.Drawing.Size(87, 42);
+			this.guna2Button3.Size = new System.Drawing.Size(87, 37);
 			this.guna2Button3.TabIndex = 12;
 			this.guna2Button3.Text = "Chia sẻ";
 			this.guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// guna2Button2
 			// 
-			this.guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.guna2Button2.Animated = true;
 			this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
 			this.guna2Button2.BorderRadius = 13;
 			this.guna2Button2.CheckedState.Parent = this.guna2Button2;
 			this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-			this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+			this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
 			this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guna2Button2.ForeColor = System.Drawing.Color.White;
-			this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(1)))), ((int)(((byte)(116)))));
 			this.guna2Button2.HoverState.Parent = this.guna2Button2;
 			this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
 			this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button2.Location = new System.Drawing.Point(367, 151);
+			this.guna2Button2.Location = new System.Drawing.Point(131, 151);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-			this.guna2Button2.Size = new System.Drawing.Size(381, 30);
+			this.guna2Button2.Size = new System.Drawing.Size(107, 30);
 			this.guna2Button2.TabIndex = 11;
 			this.guna2Button2.Text = "Bình luận";
+			this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.guna2Button2.TextOffset = new System.Drawing.Point(-3, 0);
 			// 
 			// guna2Button1
 			// 
@@ -115,19 +117,21 @@ namespace fuchsia
 			this.guna2Button1.BorderRadius = 13;
 			this.guna2Button1.CheckedState.Parent = this.guna2Button1;
 			this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-			this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+			this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
 			this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.guna2Button1.ForeColor = System.Drawing.Color.White;
 			this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(1)))), ((int)(((byte)(116)))));
 			this.guna2Button1.HoverState.Parent = this.guna2Button1;
 			this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
 			this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button1.Location = new System.Drawing.Point(14, 151);
+			this.guna2Button1.Location = new System.Drawing.Point(32, 151);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-			this.guna2Button1.Size = new System.Drawing.Size(347, 30);
+			this.guna2Button1.Size = new System.Drawing.Size(82, 30);
 			this.guna2Button1.TabIndex = 10;
 			this.guna2Button1.Text = "Thích";
+			this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.guna2Button1.TextOffset = new System.Drawing.Point(-3, 0);
 			// 
 			// panel1
 			// 
