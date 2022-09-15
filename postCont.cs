@@ -66,5 +66,44 @@ namespace fuchsia
 				_userWatchingID = value;
 			}
 		}
+		//max image height = 400
+		public Image _imgPost;
+		public Image imgPost
+		{
+			get
+			{
+				return _imgPost;
+			}
+			set
+			{
+				_imgPost = value;
+				if (value != null)
+				{
+					picBox.Image = value;
+					if (value.Height < 350)
+					{
+						picBox.Height = value.Height;
+					}
+					else
+					{
+						picBox.Height = 350;
+					}
+					this.Height += picBox.Height;
+					//captLabel.Font.Size = 13;
+					Font fnt = new Font("Segoe UI", 13);
+					captLabel.Font = fnt;
+				}
+			}
+		}
+
+		private void picBox_MouseEnter(object sender, EventArgs e)
+		{
+			picBox.FillColor = Color.FromArgb(55,57,58);
+		}
+
+		private void picBox_MouseLeave(object sender, EventArgs e)
+		{
+			picBox.FillColor = Color.Transparent;
+		}
 	}
 }

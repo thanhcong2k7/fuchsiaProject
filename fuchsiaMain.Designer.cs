@@ -141,7 +141,7 @@ namespace fuchsia
 			this.notiBtn.HoverState.Parent = this.notiBtn;
 			this.notiBtn.Image = ((System.Drawing.Image)(resources.GetObject("notiBtn.Image")));
 			this.notiBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.notiBtn.Location = new System.Drawing.Point(11, 258);
+			this.notiBtn.Location = new System.Drawing.Point(11, 249);
 			this.notiBtn.Name = "notiBtn";
 			this.notiBtn.ShadowDecoration.Parent = this.notiBtn;
 			this.notiBtn.Size = new System.Drawing.Size(218, 45);
@@ -165,7 +165,7 @@ namespace fuchsia
 			this.msgBtn.HoverState.Parent = this.msgBtn;
 			this.msgBtn.Image = ((System.Drawing.Image)(resources.GetObject("msgBtn.Image")));
 			this.msgBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.msgBtn.Location = new System.Drawing.Point(11, 207);
+			this.msgBtn.Location = new System.Drawing.Point(11, 198);
 			this.msgBtn.Name = "msgBtn";
 			this.msgBtn.ShadowDecoration.Parent = this.msgBtn;
 			this.msgBtn.Size = new System.Drawing.Size(218, 45);
@@ -179,7 +179,7 @@ namespace fuchsia
 			this.uidCtrl.BackColor = System.Drawing.Color.Transparent;
 			this.uidCtrl.Font = new System.Drawing.Font("Segoe UI", 8F);
 			this.uidCtrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(172)))), ((int)(((byte)(173)))));
-			this.uidCtrl.Location = new System.Drawing.Point(66, 45);
+			this.uidCtrl.Location = new System.Drawing.Point(70, 44);
 			this.uidCtrl.Name = "uidCtrl";
 			this.uidCtrl.Size = new System.Drawing.Size(104, 13);
 			this.uidCtrl.TabIndex = 4;
@@ -191,7 +191,7 @@ namespace fuchsia
 			this.nameTxt.BackColor = System.Drawing.Color.Transparent;
 			this.nameTxt.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.nameTxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(222)))), ((int)(((byte)(223)))));
-			this.nameTxt.Location = new System.Drawing.Point(62, 19);
+			this.nameTxt.Location = new System.Drawing.Point(66, 18);
 			this.nameTxt.Name = "nameTxt";
 			this.nameTxt.Size = new System.Drawing.Size(111, 23);
 			this.nameTxt.TabIndex = 3;
@@ -213,7 +213,7 @@ namespace fuchsia
 			this.homeBtn.HoverState.Parent = this.homeBtn;
 			this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
 			this.homeBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.homeBtn.Location = new System.Drawing.Point(11, 156);
+			this.homeBtn.Location = new System.Drawing.Point(11, 147);
 			this.homeBtn.Name = "homeBtn";
 			this.homeBtn.ShadowDecoration.Parent = this.homeBtn;
 			this.homeBtn.Size = new System.Drawing.Size(218, 45);
@@ -236,11 +236,11 @@ namespace fuchsia
 			this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(1)))), ((int)(((byte)(126)))));
 			this.guna2Button1.HoverState.Parent = this.guna2Button1;
 			this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-			this.guna2Button1.ImageSize = new System.Drawing.Size(17, 17);
-			this.guna2Button1.Location = new System.Drawing.Point(186, 40);
+			this.guna2Button1.ImageSize = new System.Drawing.Size(19, 19);
+			this.guna2Button1.Location = new System.Drawing.Point(189, 18);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-			this.guna2Button1.Size = new System.Drawing.Size(43, 30);
+			this.guna2Button1.Size = new System.Drawing.Size(40, 40);
 			this.guna2Button1.TabIndex = 2;
 			this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
 			// 
@@ -248,7 +248,7 @@ namespace fuchsia
 			// 
 			this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
-			this.guna2CirclePictureBox1.Location = new System.Drawing.Point(13, 20);
+			this.guna2CirclePictureBox1.Location = new System.Drawing.Point(13, 19);
 			this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
 			this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
 			this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;

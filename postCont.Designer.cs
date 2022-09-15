@@ -31,6 +31,7 @@ namespace fuchsia
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(postCont));
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.picBox = new Guna.UI2.WinForms.Guna2PictureBox();
 			this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -40,12 +41,14 @@ namespace fuchsia
 			this.nameLabel = new System.Windows.Forms.Label();
 			this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
 			this.guna2Panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// guna2Panel1
 			// 
 			this.guna2Panel1.BorderRadius = 15;
+			this.guna2Panel1.Controls.Add(this.picBox);
 			this.guna2Panel1.Controls.Add(this.guna2Button3);
 			this.guna2Panel1.Controls.Add(this.guna2Button2);
 			this.guna2Panel1.Controls.Add(this.guna2Button1);
@@ -62,9 +65,26 @@ namespace fuchsia
 			this.guna2Panel1.Size = new System.Drawing.Size(780, 200);
 			this.guna2Panel1.TabIndex = 0;
 			// 
+			// picBox
+			// 
+			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.picBox.BackColor = System.Drawing.Color.Transparent;
+			this.picBox.BorderRadius = 10;
+			this.picBox.FillColor = System.Drawing.Color.Transparent;
+			this.picBox.Location = new System.Drawing.Point(36, 107);
+			this.picBox.Name = "picBox";
+			this.picBox.ShadowDecoration.Parent = this.picBox;
+			this.picBox.Size = new System.Drawing.Size(702, 10);
+			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.picBox.TabIndex = 14;
+			this.picBox.TabStop = false;
+			this.picBox.MouseEnter += new System.EventHandler(this.picBox_MouseEnter);
+			this.picBox.MouseLeave += new System.EventHandler(this.picBox_MouseLeave);
+			// 
 			// guna2Button3
 			// 
-			this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.guna2Button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.guna2Button3.Animated = true;
 			this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
 			this.guna2Button3.BorderRadius = 13;
@@ -78,7 +98,7 @@ namespace fuchsia
 			this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
 			this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.guna2Button3.ImageSize = new System.Drawing.Size(18, 18);
-			this.guna2Button3.Location = new System.Drawing.Point(661, 17);
+			this.guna2Button3.Location = new System.Drawing.Point(675, 16);
 			this.guna2Button3.Name = "guna2Button3";
 			this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
 			this.guna2Button3.Size = new System.Drawing.Size(87, 37);
@@ -100,7 +120,7 @@ namespace fuchsia
 			this.guna2Button2.HoverState.Parent = this.guna2Button2;
 			this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
 			this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button2.Location = new System.Drawing.Point(131, 151);
+			this.guna2Button2.Location = new System.Drawing.Point(122, 151);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
 			this.guna2Button2.Size = new System.Drawing.Size(107, 30);
@@ -147,9 +167,9 @@ namespace fuchsia
 			// 
 			this.captLabel.AutoSize = true;
 			this.captLabel.BackColor = System.Drawing.Color.Transparent;
-			this.captLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.captLabel.Font = new System.Drawing.Font("Segoe UI", 18F);
 			this.captLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-			this.captLabel.Location = new System.Drawing.Point(41, 75);
+			this.captLabel.Location = new System.Drawing.Point(34, 68);
 			this.captLabel.Name = "captLabel";
 			this.captLabel.Size = new System.Drawing.Size(54, 32);
 			this.captLabel.TabIndex = 8;
@@ -202,6 +222,7 @@ namespace fuchsia
 			this.Size = new System.Drawing.Size(780, 200);
 			this.guna2Panel1.ResumeLayout(false);
 			this.guna2Panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
@@ -218,5 +239,6 @@ namespace fuchsia
 		private Guna.UI2.WinForms.Guna2Button guna2Button1;
 		private Guna.UI2.WinForms.Guna2Button guna2Button2;
 		private Guna.UI2.WinForms.Guna2Button guna2Button3;
+		private Guna.UI2.WinForms.Guna2PictureBox picBox;
 	}
 }

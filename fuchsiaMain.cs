@@ -21,7 +21,8 @@ namespace fuchsia
 		public fuchsiaMain(string privateKey)
 		{
 			InitializeComponent();
-			initPost("test",userName,getUTC_Time());
+			//initPost("test",userName,getUTC_Time());
+			initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
 			//(new loginForm()).Show();
 			userKey = privateKey;
 		}
@@ -55,7 +56,7 @@ namespace fuchsia
 		{
 			//send post stuff
 		}
-		private void initPost(string captTxt, string nameTxt, string dateT, Image[] postImg = null)
+		private void initPost(string captTxt, string nameTxt, string dateT, Image postImg = null)
 		{
 			//get post stuff
 			//add post to container
@@ -64,9 +65,10 @@ namespace fuchsia
 				name=nameTxt,
 				dateposted=dateT,
 				userWatchingID = userID,
-				Location = new Point(16,pos),
+				Location = new Point(15,pos),
 				Anchor = AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right,
-				Size = new Size(850,200)
+				Size = new Size(820, 200),
+				imgPost = postImg
 			});
 			pos += 220;
 		}
