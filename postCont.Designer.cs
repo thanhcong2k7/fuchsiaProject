@@ -120,10 +120,10 @@ namespace fuchsia
 			this.guna2Button2.HoverState.Parent = this.guna2Button2;
 			this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
 			this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button2.Location = new System.Drawing.Point(122, 151);
+			this.guna2Button2.Location = new System.Drawing.Point(120, 148);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-			this.guna2Button2.Size = new System.Drawing.Size(107, 30);
+			this.guna2Button2.Size = new System.Drawing.Size(107, 38);
 			this.guna2Button2.TabIndex = 11;
 			this.guna2Button2.Text = "Bình luận";
 			this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -144,10 +144,10 @@ namespace fuchsia
 			this.guna2Button1.HoverState.Parent = this.guna2Button1;
 			this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
 			this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button1.Location = new System.Drawing.Point(32, 151);
+			this.guna2Button1.Location = new System.Drawing.Point(32, 148);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-			this.guna2Button1.Size = new System.Drawing.Size(82, 30);
+			this.guna2Button1.Size = new System.Drawing.Size(82, 38);
 			this.guna2Button1.TabIndex = 10;
 			this.guna2Button1.Text = "Thích";
 			this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

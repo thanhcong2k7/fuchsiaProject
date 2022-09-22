@@ -46,11 +46,15 @@ namespace fuchsia
 			this.label2 = new System.Windows.Forms.Label();
 			this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
 			this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.intStatus = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
 			this.guna2Panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.titleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+			this.guna2Panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// guna2Panel1
@@ -274,6 +278,39 @@ namespace fuchsia
 			// 
 			this.guna2DragControl1.TargetControl = this.titleBar;
 			// 
+			// guna2Panel2
+			// 
+			this.guna2Panel2.Controls.Add(this.intStatus);
+			this.guna2Panel2.Controls.Add(this.label5);
+			this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.guna2Panel2.Location = new System.Drawing.Point(0, 430);
+			this.guna2Panel2.Name = "guna2Panel2";
+			this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+			this.guna2Panel2.Size = new System.Drawing.Size(812, 28);
+			this.guna2Panel2.TabIndex = 3;
+			// 
+			// intStatus
+			// 
+			this.intStatus.AutoSize = true;
+			this.intStatus.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.intStatus.ForeColor = System.Drawing.Color.Red;
+			this.intStatus.Location = new System.Drawing.Point(76, 7);
+			this.intStatus.Name = "intStatus";
+			this.intStatus.Size = new System.Drawing.Size(22, 13);
+			this.intStatus.TabIndex = 2;
+			this.intStatus.Text = "OK";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+			this.label5.Location = new System.Drawing.Point(5, 7);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(75, 13);
+			this.label5.TabIndex = 1;
+			this.label5.Text = "Server status:";
+			// 
 			// loginForm
 			// 
 			this.AcceptButton = this.submitBtn;
@@ -281,6 +318,7 @@ namespace fuchsia
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
 			this.ClientSize = new System.Drawing.Size(812, 458);
+			this.Controls.Add(this.guna2Panel2);
 			this.Controls.Add(this.titleBar);
 			this.Controls.Add(this.guna2Panel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -296,6 +334,8 @@ namespace fuchsia
 			this.titleBar.ResumeLayout(false);
 			this.titleBar.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+			this.guna2Panel2.ResumeLayout(false);
+			this.guna2Panel2.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -317,5 +357,8 @@ namespace fuchsia
 		private System.Windows.Forms.Label label2;
 		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
 		private Guna.UI2.WinForms.Guna2Button guna2Button2;
+		private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+		private System.Windows.Forms.Label intStatus;
+		private System.Windows.Forms.Label label5;
 	}
 }

@@ -15,3 +15,4 @@ D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.pdb
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.csproj.AssemblyReference.cache
 D:\Projects\fuchsia\fuchsia\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\fuchsia\fuchsia\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\fuchsia\fuchsia\bin\Debug\fuchsia.exe.config

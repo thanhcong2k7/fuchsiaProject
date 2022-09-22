@@ -10,6 +10,8 @@ using System.Security.Cryptography;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using System.Threading;
+using System.Net.NetworkInformation;
 
 namespace fuchsia
 {
@@ -41,11 +43,29 @@ namespace fuchsia
 		}
 		public string genKey(string username, string password)
 		{
-			string hsh = BitConverter.ToString(MD5.Create().ComputeHash(Encoding.ASCII.GetBytes(username+password+"abc"))).Replace("-", "").ToLower();
+			string hsh = HashMD5(password);
 			string kget = getdata(username, password);
+			procErC(kget);
 			if (hsh == kget) return hsh;
 			else MessageBox.Show("sai rồi đm \n"+hsh+"\n"+kget);
 			return null;
+		}
+
+		private void procErC(string code) //Process Error Code
+		{
+			if (code == "3")
+			{
+				intStatus.ForeColor = Color.FromArgb(255,0,0);
+				intStatus.Text = "Can't connect to MySQL Server. Please try again later. (Internal error)";
+			} else if (code == "1")
+			{
+				intStatus.ForeColor = Color.FromArgb(255, 0, 0);
+				intStatus.Text = "Can't connect to server. Please check your Internet connection.";
+			} else
+			{
+				intStatus.ForeColor = Color.FromArgb(0, 192, 0);
+				intStatus.Text = "OK";
+			}
 		}
 
 		private string getdata(string usr,string pwd)
@@ -57,8 +77,6 @@ namespace fuchsia
 				Stream data = client.OpenRead("http://localhost/fuchsia/auth.php?un="+usr+"&pd="+pwd);
 				StreamReader reader = new StreamReader(data);
 				string s = reader.ReadToEnd();
-				//Console.WriteLine(s);
-				//dynObj = JsonConvert.DeserializeObject(s);
 				data.Close();
 				reader.Close();
 				return s;
@@ -66,8 +84,41 @@ namespace fuchsia
 			catch (Exception e)
 			{
 				MessageBox.Show(e.Message);
+				return "1";
 			}
-			return "";
+			//return "";
 		}
+		public string HashMD5(string str)
+		{
+			return BitConverter.ToString(MD5.Create().ComputeHash(Encoding.ASCII.GetBytes(str))).Replace("-", "").ToLower();
+		}
+		/*
+		private string status(bool stt)
+		{
+			if (stt == true)
+			{
+				return "OK";
+				intStatus.ForeColor = Color.FromArgb(0,192,0);
+			}else return "bruh";
+		}
+
+		public static bool CheckForInternetConnection(int timeoutMs = 10000, string url = null)
+		{
+			try
+			{
+				Ping myPing = new Ping();
+				String host = "localhost";
+				byte[] buffer = new byte[32];
+				int timeout = 10000;
+				PingOptions pingOptions = new PingOptions();
+				PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+				return (reply.Status == IPStatus.Success);
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
+		*/
 	}
 }
