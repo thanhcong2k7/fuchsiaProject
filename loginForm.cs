@@ -17,9 +17,17 @@ namespace fuchsia
 {
 	public partial class loginForm : Form
 	{
-		public loginForm()
+		string usrn = "", upwd = "";
+		public loginForm(string bruh, string bruh2)
 		{
+			usrn = bruh;
+			upwd = bruh2;
 			InitializeComponent();
+			if (usrn != null)
+			{
+				new fuchsiaMain(genKey(usrn, upwd)).Show();
+				this.Hide();
+			}
 			//loginFrm.BackColor = Color.FromArgb(100,30,30,30);
 		}
 
@@ -45,27 +53,13 @@ namespace fuchsia
 		{
 			string hsh = HashMD5(password);
 			string kget = getdata(username, password);
-			procErC(kget);
-			if (hsh == kget) return hsh;
-			else MessageBox.Show("sai rồi đm \n"+hsh+"\n"+kget);
-			return null;
-		}
-
-		private void procErC(string code) //Process Error Code
-		{
-			if (code == "3")
+			if (hsh == kget)
 			{
-				intStatus.ForeColor = Color.FromArgb(255,0,0);
-				intStatus.Text = "Can't connect to MySQL Server. Please try again later. (Internal error)";
-			} else if (code == "1")
-			{
-				intStatus.ForeColor = Color.FromArgb(255, 0, 0);
-				intStatus.Text = "Can't connect to server. Please check your Internet connection.";
-			} else
-			{
-				intStatus.ForeColor = Color.FromArgb(0, 192, 0);
-				intStatus.Text = "OK";
+				File.WriteAllText("Data/usr",EncryptAesManaged(username+" "+kget));
+				return hsh;
 			}
+			else MessageBox.Show("sai rồi đm \n" + hsh + "\n" + kget);
+			return null;
 		}
 
 		private string getdata(string usr,string pwd)
@@ -120,5 +114,81 @@ namespace fuchsia
 			}
 		}
 		*/
+		static string EncryptAesManaged(string raw, bool needEnc = true)
+		{
+			try
+			{
+				// Create Aes that generates a new key and initialization vector (IV).    
+				// Same key must be used in encryption and decryption    
+				using (AesManaged aes = new AesManaged())
+				{
+					// Encrypt string
+					if (needEnc)
+					{
+						byte[] encrypted = Encrypt(raw, aes.Key, aes.IV);
+						return Encoding.UTF8.GetString(encrypted);
+					}
+					else
+					{
+						// Decrypt the bytes to a string.    
+						string decrypted = Decrypt(Encoding.ASCII.GetBytes(raw), aes.Key, aes.IV);
+						return decrypted;
+					}
+				}
+			}
+			catch (Exception exp)
+			{
+				MessageBox.Show(exp.Message);
+				return "";
+			}
+		}
+		static byte[] Encrypt(string plainText, byte[] Key, byte[] IV)
+		{
+			byte[] encrypted;
+			// Create a new AesManaged.    
+			using (AesManaged aes = new AesManaged())
+			{
+				// Create encryptor    
+				ICryptoTransform encryptor = aes.CreateEncryptor(Key, IV);
+				// Create MemoryStream    
+				using (MemoryStream ms = new MemoryStream())
+				{
+					// Create crypto stream using the CryptoStream class. This class is the key to encryption    
+					// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream    
+					// to encrypt    
+					using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+					{
+						// Create StreamWriter and write data to a stream    
+						using (StreamWriter sw = new StreamWriter(cs))
+							sw.Write(plainText);
+						encrypted = ms.ToArray();
+					}
+				}
+			}
+			// Return encrypted data    
+			return encrypted;
+		}
+		static string Decrypt(byte[] cipherText, byte[] Key, byte[] IV)
+		{
+			string plaintext = null;
+			// Create AesManaged    
+			using (AesManaged aes = new AesManaged())
+			{
+				// Create a decryptor    
+				ICryptoTransform decryptor = aes.CreateDecryptor(Key, IV);
+				// Create the streams used for decryption.    
+				using (MemoryStream ms = new MemoryStream(cipherText))
+				{
+					// Create crypto stream    
+					using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read))
+					{
+						// Read crypto stream    
+						using (StreamReader reader = new StreamReader(cs))
+							plaintext = reader.ReadToEnd();
+					}
+				}
+			}
+			return plaintext;
+		}
 	}
 }
