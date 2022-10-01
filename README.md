@@ -2,7 +2,7 @@
  VN-ese social network app made by a fkin 15-year-old dev in his free time
 
 ## Usage
-Just download binary from Releases.
+Just download binary from Releases tag.
 
 (Currently Windows only. Support for Linux will be added later)
 
