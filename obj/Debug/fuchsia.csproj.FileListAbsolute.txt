@@ -3,7 +3,6 @@ D:\Projects\fuchsia\fuchsia\bin\Debug\fuchsia.pdb
 D:\Projects\fuchsia\fuchsia\bin\Debug\Guna.UI2.dll
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.aboutWindow.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.fuchsiaMain.resources
-D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.loginForm.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.postCont.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.Properties.Resources.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.splashScr.resources
@@ -16,3 +15,4 @@ D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.csproj.AssemblyReference.cache
 D:\Projects\fuchsia\fuchsia\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\fuchsia\fuchsia\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\fuchsia\fuchsia\bin\Debug\fuchsia.exe.config
+D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.loginFrm.resources

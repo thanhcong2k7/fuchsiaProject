@@ -12,8 +12,8 @@ namespace fuchsia
 {
 	public partial class splashScr : Form
 	{
-        public string version = "v0.1.02922-alpha";
-		public splashScr()
+        public string version = "v0.1.27922-alpha";
+		public splashScr()//string bruh, string bruh2)
 		{
 			InitializeComponent();
             verTxt.Text = version;
@@ -22,7 +22,7 @@ namespace fuchsia
             this.MinimizeBox = false;
             this.ShowIcon = false;
             this.StartPosition = FormStartPosition.CenterScreen;
-        }
+        }/*
 
         //Delegate for cross thread call to close
         private delegate void CloseDelegate();
@@ -58,6 +58,6 @@ namespace fuchsia
                 splashForm.Close();
                 splashForm = null;
             };
-        }
+        }*/
     }
 }

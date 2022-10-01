@@ -18,15 +18,16 @@ namespace fuchsia
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			splashScr.ShowSplashScreen();
+			//splashScr.ShowSplashScreen();
 			//System.Threading.Thread.Sleep(2000);
 			//Check info file exist
 			string curFile = @"Data/usr";
-			string[] bruhstr = null;
+			string[] bruhstr = { "0", "0" };
+			bool bruhbr = false;
 			if (File.Exists(curFile))
 			{
 				string in4 = File.ReadAllText(curFile);
-				in4 = EncryptAesManaged(in4,false);
+				//in4 = EncryptAesManaged(in4,false);
 				bruhstr = in4.Split(' ');
 				int cnt = 0;
 				foreach (string s in bruhstr)
@@ -34,9 +35,11 @@ namespace fuchsia
 					cnt += s != null ? 1 : 0;
 				}
 				if (cnt == 1) bruhstr[0] = "bruh";
+				bruhbr = true;
 			}
-			splashScr.CloseForm();
-			Application.Run(new loginForm(bruhstr[0], bruhstr[1]));
+			//splashScr.CloseForm();
+			Application.Run(new loginFrm(bruhbr, bruhstr[0], bruhstr[1]));
+			//Application.Run(new loginForm(bruhstr[0], bruhstr[1]));
 		}
 		static string EncryptAesManaged(string raw, bool needEnc = true)
 		{
