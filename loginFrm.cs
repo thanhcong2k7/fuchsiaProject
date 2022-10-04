@@ -16,41 +16,37 @@ namespace fuchsia
 	public partial class loginFrm : Form
 	{
 		private string usrn = "", upwd = "";
+		private string host = "http://localhost/fuchsia";
 		public loginFrm(bool isFE, string bruh, string bruh2) //isFE = is file exists? ("Data/usr")
 		{
-			/*
-			Thread t = new Thread(new ThreadStart(startf));
-			t.Start();
-			InitializeComponent();
-			if (isFE)
-			{
-				new fuchsiaMain(genKey(usrn, upwd)).Show();
-				this.Hide();
-			}/*
-			usrBox.Text = "";
-			pwdBox.Text = "";
-			Thread.Sleep(1000);
-			t.Abort();*/
 			InitializeComponent();
 			usrn = bruh;
 			upwd = bruh2;
+			if (isFE)
+			{
+				string dt = getdata(usrn);
+				if (dt == upwd)
+				{
+					//MessageBox.Show("passed!");
+					Application.Run(new fuchsiaMain(dt));
+					this.Hide();
+				}
+			}
 			//loginFrm.BackColor = Color.FromArgb(100,30,30,30);
 		}
-		/*
-		private void startf()
-		{
-			Application.Run(new splashScr());
-		}
-		*/
 		private void guna2Button1_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(usrBox.Text + "_" + pwdBox.Text);
+			//MessageBox.Show(usrBox.Text + "_" + pwdBox.Text);
 			string k = genKey(usrBox.Text, pwdBox.Text);
 			if (k != null)
 			{
-				//new fuchsiaMain(genKey(usrBox.Text, pwdBox.Text)).Show();
+				new fuchsiaMain(k).Show();
 				this.Hide();
 			}
+			//Write login in4 to Data/usr
+			if (!File.Exists(@"Data/usr"))
+				File.Create(@"Data/usr");
+			File.WriteAllText(@"Data/usr", HashMD5(usrBox.Text + " " + pwdBox.Text));
 		}
 		public string genKey(string username, string password)
 		{
@@ -58,19 +54,19 @@ namespace fuchsia
 			string kget = getdata(username);//, password);
 			if (kget == "1")
 			{
-				MessageBox.Show("Can't connect to the server.");
+				new msgBox("Không thể kết nối đến máy chủ.").Show();
 				Application.Exit();
 			}
-			else// if (kget == "0")
+			else if (kget == "0")
 			{
-				MessageBox.Show("Username not found!\n" + hsh);
+				new msgBox("Username not found!\n" + username).Show();
 			}
 			if (hsh == kget)
 			{
 				File.WriteAllText("Data/usr", EncryptAesManaged(username + " " + kget));
 				return hsh;
 			}
-			else MessageBox.Show("sai rồi đm \n" + hsh + "\n" + kget);
+			else new msgBox("sai rồi đm \n" + hsh + "\n" + kget).Show();
 			return null;
 		}
 
@@ -80,7 +76,7 @@ namespace fuchsia
 			client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
 			try
 			{
-				Stream data = client.OpenRead("http://localhost/fuchsia/auth.php?un=" + usr);// +"&pd="+pwd);
+				Stream data = client.OpenRead(host + "/auth.php?un=" + usr);// +"&pd="+pwd);
 				StreamReader reader = new StreamReader(data);
 				string s = reader.ReadToEnd();
 				data.Close();
@@ -92,6 +88,78 @@ namespace fuchsia
 				return "1";
 			}
 		}
+
+		private void guna2Panel1_MouseHover(object sender, EventArgs e)
+		{
+			guna2Panel1.FillColor = Color.FromArgb(40, 41, 42);
+		}
+
+		private void guna2Panel1_MouseLeave(object sender, EventArgs e)
+		{
+			guna2Panel1.FillColor = Color.Transparent;
+		}
+
+		private void guna2Panel2_MouseEnter(object sender, EventArgs e)
+		{
+			guna2Panel2.FillColor = Color.FromArgb(40, 41, 42);
+		}
+
+		private void guna2Panel2_MouseLeave(object sender, EventArgs e)
+		{
+			guna2Panel2.FillColor = Color.Transparent;
+		}
+
+		private void guna2Button2_Click(object sender, EventArgs e)
+		{
+			//Register stuff
+			string result = reg(usrName_reg.Text, emailTxt_reg.Text, pwdTxt_reg.Text, nameTxt_reg.Text);
+			if (result == "1")
+			{
+				new msgBox("Registered!").Show();
+			}
+			else if (result == "2")
+			{
+				new msgBox("Username existed!").Show();
+			}
+			else if (result == "3")
+			{
+				new msgBox("Internal error occurred! Please try again later.").Show();
+			}
+			else if (result == "0")
+			{
+				new msgBox("Failed to connect to server! Please check your Internet connection and try again later.").Show();
+			}
+			else new msgBox("bruh wtf " + result).Show();
+			MessageBox.Show("check " + result);
+		}
+
+		private void writelog(string txt)
+		{
+			if (!File.Exists(@"Data/error_log.txt"))
+				File.Create(@"Data/error_log.txt");
+			File.AppendAllText(@"Data/error_log.txt", "\n" + txt);
+		}
+
+		private string reg(string usr, string email, string pwd, string nameT)
+		{
+			WebClient client = new WebClient();
+			client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+			try
+			{
+				Stream data = client.OpenRead(host + "/reg.php?un=" + usr + "&pd=" + pwd + "&name=" + nameT + "&regmail=" + email);
+				StreamReader reader = new StreamReader(data);
+				string s = reader.ReadToEnd();
+				data.Close();
+				reader.Close();
+				return s;
+			}
+			catch (Exception)
+			{
+				MessageBox.Show("wtf server?");
+				return "0";
+			}
+		}
+
 		public string HashMD5(string str)
 		{
 			return BitConverter.ToString(MD5.Create().ComputeHash(Encoding.ASCII.GetBytes(str))).Replace("-", "").ToLower();

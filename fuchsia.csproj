@@ -111,6 +111,12 @@
     <Compile Include="loginFrm.Designer.cs">
       <DependentUpon>loginFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="msgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msgBox.Designer.cs">
+      <DependentUpon>msgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="postCont.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loginFrm.resx">
       <DependentUpon>loginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msgBox.resx">
+      <DependentUpon>msgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="postCont.resx">
       <DependentUpon>postCont.cs</DependentUpon>

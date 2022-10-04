@@ -16,3 +16,4 @@ D:\Projects\fuchsia\fuchsia\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\fuchsia\fuchsia\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\fuchsia\fuchsia\bin\Debug\fuchsia.exe.config
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.loginFrm.resources
+D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.msgBox.resources
