@@ -91,22 +91,22 @@ namespace fuchsia
 
 		private void guna2Panel1_MouseHover(object sender, EventArgs e)
 		{
-			guna2Panel1.FillColor = Color.FromArgb(40, 41, 42);
+			loginForm_ctrl.FillColor = Color.FromArgb(40, 41, 42);
 		}
 
 		private void guna2Panel1_MouseLeave(object sender, EventArgs e)
 		{
-			guna2Panel1.FillColor = Color.Transparent;
+			loginForm_ctrl.FillColor = Color.Transparent;
 		}
 
 		private void guna2Panel2_MouseEnter(object sender, EventArgs e)
 		{
-			guna2Panel2.FillColor = Color.FromArgb(40, 41, 42);
+			regForm_ctrl.FillColor = Color.FromArgb(40, 41, 42);
 		}
 
 		private void guna2Panel2_MouseLeave(object sender, EventArgs e)
 		{
-			guna2Panel2.FillColor = Color.Transparent;
+			regForm_ctrl.FillColor = Color.Transparent;
 		}
 
 		private void guna2Button2_Click(object sender, EventArgs e)

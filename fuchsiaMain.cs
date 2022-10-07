@@ -22,7 +22,7 @@ namespace fuchsia
 		{
 			InitializeComponent();
 			//initPost("test",userName,getUTC_Time());
-			initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+			//initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
 			//(new loginForm()).Show();
 			userKey = privateKey;
 		}

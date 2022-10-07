@@ -105,5 +105,10 @@ namespace fuchsia
 		{
 			picBox.FillColor = Color.Transparent;
 		}
+
+		private void captLabel_SizeChanged(object sender, EventArgs e)
+		{
+			//
+		}
 	}
 }

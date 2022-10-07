@@ -32,7 +32,7 @@ namespace fuchsia
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginFrm));
 			this.usrBox = new Guna.UI2.WinForms.Guna2TextBox();
 			this.pwdBox = new Guna.UI2.WinForms.Guna2TextBox();
-			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+			this.loginForm_ctrl = new Guna.UI2.WinForms.Guna2Panel();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@ namespace fuchsia
 			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.regForm_ctrl = new Guna.UI2.WinForms.Guna2Panel();
 			this.pictureBox6 = new System.Windows.Forms.PictureBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.usrName_reg = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,10 +57,10 @@ namespace fuchsia
 			this.label6 = new System.Windows.Forms.Label();
 			this.pwdTxt_reg = new Guna.UI2.WinForms.Guna2TextBox();
 			this.nameTxt_reg = new Guna.UI2.WinForms.Guna2TextBox();
-			this.guna2Panel1.SuspendLayout();
+			this.loginForm_ctrl.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			this.guna2Panel2.SuspendLayout();
+			this.regForm_ctrl.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -115,31 +115,31 @@ namespace fuchsia
 			this.pwdBox.TabIndex = 1;
 			this.pwdBox.MouseEnter += new System.EventHandler(this.guna2Panel1_MouseHover);
 			// 
-			// guna2Panel1
+			// loginForm_ctrl
 			// 
-			this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.loginForm_ctrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
-			this.guna2Panel1.BorderRadius = 10;
-			this.guna2Panel1.Controls.Add(this.linkLabel1);
-			this.guna2Panel1.Controls.Add(this.guna2CheckBox1);
-			this.guna2Panel1.Controls.Add(this.label4);
-			this.guna2Panel1.Controls.Add(this.pictureBox1);
-			this.guna2Panel1.Controls.Add(this.pictureBox2);
-			this.guna2Panel1.Controls.Add(this.guna2Button1);
-			this.guna2Panel1.Controls.Add(this.label1);
-			this.guna2Panel1.Controls.Add(this.label2);
-			this.guna2Panel1.Controls.Add(this.pwdBox);
-			this.guna2Panel1.Controls.Add(this.usrBox);
-			this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-			this.guna2Panel1.Location = new System.Drawing.Point(56, 38);
-			this.guna2Panel1.Name = "guna2Panel1";
-			this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-			this.guna2Panel1.Size = new System.Drawing.Size(341, 491);
-			this.guna2Panel1.TabIndex = 4;
-			this.guna2Panel1.MouseEnter += new System.EventHandler(this.guna2Panel1_MouseHover);
-			this.guna2Panel1.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
+			this.loginForm_ctrl.BackColor = System.Drawing.Color.Transparent;
+			this.loginForm_ctrl.BorderRadius = 10;
+			this.loginForm_ctrl.Controls.Add(this.linkLabel1);
+			this.loginForm_ctrl.Controls.Add(this.guna2CheckBox1);
+			this.loginForm_ctrl.Controls.Add(this.label4);
+			this.loginForm_ctrl.Controls.Add(this.pictureBox1);
+			this.loginForm_ctrl.Controls.Add(this.pictureBox2);
+			this.loginForm_ctrl.Controls.Add(this.guna2Button1);
+			this.loginForm_ctrl.Controls.Add(this.label1);
+			this.loginForm_ctrl.Controls.Add(this.label2);
+			this.loginForm_ctrl.Controls.Add(this.pwdBox);
+			this.loginForm_ctrl.Controls.Add(this.usrBox);
+			this.loginForm_ctrl.FillColor = System.Drawing.Color.Transparent;
+			this.loginForm_ctrl.Location = new System.Drawing.Point(56, 38);
+			this.loginForm_ctrl.Name = "loginForm_ctrl";
+			this.loginForm_ctrl.ShadowDecoration.Parent = this.loginForm_ctrl;
+			this.loginForm_ctrl.Size = new System.Drawing.Size(341, 491);
+			this.loginForm_ctrl.TabIndex = 4;
+			this.loginForm_ctrl.MouseEnter += new System.EventHandler(this.guna2Panel1_MouseHover);
+			this.loginForm_ctrl.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
 			// 
 			// linkLabel1
 			// 
@@ -248,36 +248,36 @@ namespace fuchsia
 			this.label2.Text = "Mật khẩu";
 			this.label2.MouseEnter += new System.EventHandler(this.guna2Panel1_MouseHover);
 			// 
-			// guna2Panel2
+			// regForm_ctrl
 			// 
-			this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.regForm_ctrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
-			this.guna2Panel2.BorderRadius = 10;
-			this.guna2Panel2.Controls.Add(this.pictureBox6);
-			this.guna2Panel2.Controls.Add(this.label8);
-			this.guna2Panel2.Controls.Add(this.usrName_reg);
-			this.guna2Panel2.Controls.Add(this.pictureBox5);
-			this.guna2Panel2.Controls.Add(this.label7);
-			this.guna2Panel2.Controls.Add(this.emailTxt_reg);
-			this.guna2Panel2.Controls.Add(this.guna2CheckBox2);
-			this.guna2Panel2.Controls.Add(this.label3);
-			this.guna2Panel2.Controls.Add(this.pictureBox3);
-			this.guna2Panel2.Controls.Add(this.pictureBox4);
-			this.guna2Panel2.Controls.Add(this.guna2Button2);
-			this.guna2Panel2.Controls.Add(this.label5);
-			this.guna2Panel2.Controls.Add(this.label6);
-			this.guna2Panel2.Controls.Add(this.pwdTxt_reg);
-			this.guna2Panel2.Controls.Add(this.nameTxt_reg);
-			this.guna2Panel2.FillColor = System.Drawing.Color.Transparent;
-			this.guna2Panel2.Location = new System.Drawing.Point(482, 38);
-			this.guna2Panel2.Name = "guna2Panel2";
-			this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-			this.guna2Panel2.Size = new System.Drawing.Size(341, 491);
-			this.guna2Panel2.TabIndex = 12;
-			this.guna2Panel2.MouseEnter += new System.EventHandler(this.guna2Panel2_MouseEnter);
-			this.guna2Panel2.MouseLeave += new System.EventHandler(this.guna2Panel2_MouseLeave);
+			this.regForm_ctrl.BackColor = System.Drawing.Color.Transparent;
+			this.regForm_ctrl.BorderRadius = 10;
+			this.regForm_ctrl.Controls.Add(this.pictureBox6);
+			this.regForm_ctrl.Controls.Add(this.label8);
+			this.regForm_ctrl.Controls.Add(this.nameTxt_reg);
+			this.regForm_ctrl.Controls.Add(this.usrName_reg);
+			this.regForm_ctrl.Controls.Add(this.emailTxt_reg);
+			this.regForm_ctrl.Controls.Add(this.pwdTxt_reg);
+			this.regForm_ctrl.Controls.Add(this.pictureBox5);
+			this.regForm_ctrl.Controls.Add(this.label7);
+			this.regForm_ctrl.Controls.Add(this.guna2CheckBox2);
+			this.regForm_ctrl.Controls.Add(this.label3);
+			this.regForm_ctrl.Controls.Add(this.pictureBox3);
+			this.regForm_ctrl.Controls.Add(this.pictureBox4);
+			this.regForm_ctrl.Controls.Add(this.guna2Button2);
+			this.regForm_ctrl.Controls.Add(this.label5);
+			this.regForm_ctrl.Controls.Add(this.label6);
+			this.regForm_ctrl.FillColor = System.Drawing.Color.Transparent;
+			this.regForm_ctrl.Location = new System.Drawing.Point(482, 38);
+			this.regForm_ctrl.Name = "regForm_ctrl";
+			this.regForm_ctrl.ShadowDecoration.Parent = this.regForm_ctrl;
+			this.regForm_ctrl.Size = new System.Drawing.Size(341, 491);
+			this.regForm_ctrl.TabIndex = 12;
+			this.regForm_ctrl.MouseEnter += new System.EventHandler(this.guna2Panel2_MouseEnter);
+			this.regForm_ctrl.MouseLeave += new System.EventHandler(this.guna2Panel2_MouseLeave);
 			// 
 			// pictureBox6
 			// 
@@ -519,18 +519,18 @@ namespace fuchsia
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(27)))));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(886, 575);
-			this.Controls.Add(this.guna2Panel2);
-			this.Controls.Add(this.guna2Panel1);
+			this.Controls.Add(this.regForm_ctrl);
+			this.Controls.Add(this.loginForm_ctrl);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "loginFrm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "fuchsia Login";
-			this.guna2Panel1.ResumeLayout(false);
-			this.guna2Panel1.PerformLayout();
+			this.loginForm_ctrl.ResumeLayout(false);
+			this.loginForm_ctrl.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			this.guna2Panel2.ResumeLayout(false);
-			this.guna2Panel2.PerformLayout();
+			this.regForm_ctrl.ResumeLayout(false);
+			this.regForm_ctrl.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -543,7 +543,7 @@ namespace fuchsia
 
 		private Guna.UI2.WinForms.Guna2TextBox usrBox;
 		private Guna.UI2.WinForms.Guna2TextBox pwdBox;
-		private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+		private Guna.UI2.WinForms.Guna2Panel loginForm_ctrl;
 		private Guna.UI2.WinForms.Guna2Button guna2Button1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.PictureBox pictureBox1;
@@ -551,7 +551,7 @@ namespace fuchsia
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label4;
 		private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
-		private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+		private Guna.UI2.WinForms.Guna2Panel regForm_ctrl;
 		private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.PictureBox pictureBox3;

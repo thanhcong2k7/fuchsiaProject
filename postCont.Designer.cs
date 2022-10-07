@@ -67,7 +67,7 @@ namespace fuchsia
 			// 
 			// picBox
 			// 
-			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			this.picBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.picBox.BackColor = System.Drawing.Color.Transparent;
 			this.picBox.BorderRadius = 10;
@@ -174,6 +174,7 @@ namespace fuchsia
 			this.captLabel.Size = new System.Drawing.Size(54, 32);
 			this.captLabel.TabIndex = 8;
 			this.captLabel.Text = "test";
+			this.captLabel.SizeChanged += new System.EventHandler(this.captLabel_SizeChanged);
 			// 
 			// datePosted
 			// 
