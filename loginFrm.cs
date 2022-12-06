@@ -28,7 +28,7 @@ namespace fuchsia
 				if (dt == upwd)
 				{
 					//MessageBox.Show("passed!");
-					Application.Run(new fuchsiaMain(dt));
+					Application.Run(new fuchsiaMain(dt,usrn)); //fix later
 					this.Hide();
 				}
 			}
@@ -40,7 +40,7 @@ namespace fuchsia
 			string k = genKey(usrBox.Text, pwdBox.Text);
 			if (k != null)
 			{
-				new fuchsiaMain(k).Show();
+				new fuchsiaMain(k,usrn).Show(); //fix later
 				this.Hide();
 			}
 			//Write login in4 to Data/usr

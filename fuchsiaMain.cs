@@ -9,32 +9,40 @@ using System.Threading;
 using System.Net;
 using System.Windows.Forms;
 using System.IO;
-using Newtonsoft.Json;
-
+using System.Reflection;
 namespace fuchsia
 {
 	public partial class fuchsiaMain : Form
 	{
 		public string userID = "abcxyz";
 		public string userName = "Nguyễn Thành Công";
-		private string userKey = "";
-		public fuchsiaMain(string privateKey)
+		private string usr_ = "", pwd_ = "";
+		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
+		public fuchsiaMain(string user, string passw)
 		{
 			InitializeComponent();
+			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
-			//initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+            initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
+            initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
 			//(new loginForm()).Show();
-			userKey = privateKey;
+            usr_ = user;
+            pwd_ = passw;
+            handleLnk.Text = "@" + user;
+            postContainer.MouseWheel += postContainer_Scroll;
+            appName.Text = "fuchsia " + a.Version.ToString() + " - Pre-Alpha";// + "." + minorV.ToString() + "." + patchV.ToString() + "-pre_alpha";
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)
 		{
 			//logout stuff
+			Application.Exit();
 		}
 
 		private void infoBtn_Click(object sender, EventArgs e)
 		{
-			(new aboutWindow()).Show();
+			//About Window
+			//(new aboutWindow()).Show();
 		}
 
 		private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -48,6 +56,7 @@ namespace fuchsia
 
 		private void closeBtn_Click(object sender, EventArgs e)
 		{
+			//exit stuff
 			this.Close();
 			Application.Exit();
 		}
@@ -59,39 +68,75 @@ namespace fuchsia
 		private void initPost(string captTxt, string nameTxt, string dateT, Image postImg = null)
 		{
 			//get post stuff
+            //wtf nothing here
+
 			//add post to container
 			this.postContainer.Controls.Add(new postCont() {
 				caption = captTxt,
 				name=nameTxt,
 				dateposted=dateT,
 				userWatchingID = userID,
-				Location = new Point(15,pos),
+				//Location = new Point(5,pos),
 				Anchor = AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right,
-				Size = new Size(820, 200),
+				Size = new Size(postContainer.Size.Width,200),
 				imgPost = postImg
 			});
 			pos += 220;
 		}
-		private string getUTC_Time()
+
+        private void tagctrl_hover(object sender, EventArgs e)
+        {
+            tagCtrl.FillColor = Color.FromArgb(50, 51, 52);
+        }
+
+        private void tagCtrl_MouseLeave(object sender, EventArgs e)
+        {
+            tagCtrl.FillColor = Color.Transparent;
+        }
+
+        private void homeBtn_Click(object sender, EventArgs e)
+        {
+            chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
+            homeBtn.FillColor = Color.FromArgb(65, 66, 67);
+            msgBtn.FillColor = Color.Transparent;
+            notiBtn.FillColor = Color.Transparent;
+            home.BringToFront();
+        }
+
+        private void msgBtn_Click(object sender, EventArgs e)
+        {
+            chooseTab_state.Location = new Point(msgBtn.Location.X, msgBtn.Location.Y + msgBtn.Size.Height);
+            msgBtn.FillColor = Color.FromArgb(65, 66, 67);
+            homeBtn.FillColor = Color.Transparent;
+            notiBtn.FillColor = Color.Transparent;
+            message_vchat.BringToFront();
+        }
+
+        private void notiBtn_Click(object sender, EventArgs e)
+        {
+            chooseTab_state.Location = new Point(notiBtn.Location.X, notiBtn.Location.Y + notiBtn.Size.Height);
+            notiBtn.FillColor = Color.FromArgb(65, 66, 67);
+            homeBtn.FillColor = Color.Transparent;
+            msgBtn.FillColor = Color.Transparent;
+        }
+
+        private void postContainer_Scroll(object sender, MouseEventArgs e)
+        {
+            /*
+            postContainer.Focus();
+            //postContainer.HorizontalScroll.Value += 5;
+            if (e.Delta < 0)
+            {
+                postContainer.HorizontalScroll.Value += e.Delta;
+            }
+            else {
+                if(postContainer.HorizontalScroll.Value >= 1)
+                    postContainer.HorizontalScroll.Value += e.Delta;
+            }*/
+        }
+		void MinimizeBtnClick(object sender, EventArgs e)
 		{
-			WebClient client = new WebClient();
-			dynamic dynObj;
-			client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
-			try
-			{
-				Stream data = client.OpenRead("http://worldtimeapi.org/api/ip");
-				StreamReader reader = new StreamReader(data);
-				string s = reader.ReadToEnd();
-				//Console.WriteLine(s);
-				dynObj = JsonConvert.DeserializeObject(s);
-				data.Close();
-				reader.Close();
-				return dynObj.utc_datetime;
-			} catch (Exception e)
-			{
-				MessageBox.Show(e.Message);
-			}
-			return "";
+			this.WindowState = FormWindowState.Minimized;
 		}
 	}
 }

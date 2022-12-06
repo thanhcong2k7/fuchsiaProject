@@ -120,9 +120,9 @@ namespace fuchsia
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(32, 44);
+			this.pictureBox1.Location = new System.Drawing.Point(32, 54);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(76, 75);
+			this.pictureBox1.Size = new System.Drawing.Size(61, 57);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
@@ -130,12 +130,12 @@ namespace fuchsia
 			// msgCtrl
 			// 
 			this.msgCtrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.msgCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.msgCtrl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
 			this.msgCtrl.Location = new System.Drawing.Point(124, 55);
 			this.msgCtrl.Name = "msgCtrl";
-			this.msgCtrl.Size = new System.Drawing.Size(356, 64);
+			this.msgCtrl.Size = new System.Drawing.Size(356, 56);
 			this.msgCtrl.TabIndex = 2;
 			this.msgCtrl.Text = "label3";
 			// 
@@ -156,7 +156,7 @@ namespace fuchsia
 			this.guna2Button2.ForeColor = System.Drawing.Color.White;
 			this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Red;
 			this.guna2Button2.HoverState.Parent = this.guna2Button2;
-			this.guna2Button2.Location = new System.Drawing.Point(376, 114);
+			this.guna2Button2.Location = new System.Drawing.Point(396, 113);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
 			this.guna2Button2.Size = new System.Drawing.Size(86, 31);

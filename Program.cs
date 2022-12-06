@@ -17,10 +17,13 @@ namespace fuchsia
 		[STAThread]
 		static void Main()
 		{
+			if (Environment.OSVersion.Version.Major >= 6)
+            	SetProcessDPIAware();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//Check host
 			TcpClient cli = new TcpClient();
+			bool tmp_test = false;
 			try
 			{
 				cli.Connect("localhost",80);
@@ -46,7 +49,12 @@ namespace fuchsia
 			} catch (Exception)
 			{
 				Application.Run(new msgBox("Không thể kết nối đến máy chủ!"));
+				tmp_test = true;
 			}
+			if(tmp_test)
+            	Application.Run(new fuchsiaMain("admin", "bruh"));
 		}
+		[System.Runtime.InteropServices.DllImport("user32.dll")]
+    	private static extern bool SetProcessDPIAware();
 	}
 }
