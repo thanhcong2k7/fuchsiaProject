@@ -124,6 +124,10 @@
     <Compile Include="msgBox.Designer.cs">
       <DependentUpon>msgBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="openImg.cs" />
+    <Compile Include="openImg.Designer.cs">
+      <DependentUpon>openImg.cs</DependentUpon>
+    </Compile>
     <Compile Include="postCont.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="msgBox.resx">
       <DependentUpon>msgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="openImg.resx">
+      <DependentUpon>openImg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="postCont.resx">
       <DependentUpon>postCont.cs</DependentUpon>

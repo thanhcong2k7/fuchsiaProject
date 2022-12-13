@@ -26,9 +26,6 @@ namespace fuchsia
 			InitializeComponent();
 			chose_react.Hide();
 			picBox.Location = new Point(captLabel.Location.X + captLabel.Size.Height + 10, (this.Size.Width - picBox.Size.Width)/2);
-			if (_imgPost == null)
-				picBox.Hide();
-			else picBox.Show();
 		}
 		public string _caption;
 		public string caption
@@ -108,7 +105,7 @@ namespace fuchsia
 					Font fnt = new Font("Segoe UI", 13);
 					captLabel.Font = fnt;
                     picBox.Location = new Point(36,107);
-				}
+				} else picBox.Hide();
 			}
 		}
 
@@ -255,6 +252,10 @@ namespace fuchsia
 		void NameLabelMouseClick(object sender, MouseEventArgs e)
 		{
 			//open profile stuff
+		}
+		void PicBoxMouseClick(object sender, MouseEventArgs e)
+		{
+			(new openImg(picBox.Image)).Show();
 		}
 	}
 }

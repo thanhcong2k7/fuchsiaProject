@@ -11,3 +11,4 @@ D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.splashScr.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.csproj.GenerateResource.Cache
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.exe
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.pdb
+D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.openImg.resources

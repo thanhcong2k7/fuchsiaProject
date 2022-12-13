@@ -277,6 +277,7 @@ namespace fuchsia
 			this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.picBox.TabIndex = 14;
 			this.picBox.TabStop = false;
+			this.picBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PicBoxMouseClick);
 			this.picBox.MouseEnter += new System.EventHandler(this.picBox_MouseEnter);
 			this.picBox.MouseLeave += new System.EventHandler(this.picBox_MouseLeave);
 			// 
