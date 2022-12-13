@@ -26,7 +26,6 @@ namespace fuchsia
 			InitializeComponent();
 			chose_react.Hide();
 			picBox.Location = new Point(captLabel.Location.X + captLabel.Size.Height + 10, (this.Size.Width - picBox.Size.Width)/2);
-			separator.Location = new Point();
 		}
 		public string _caption;
 		public string caption
@@ -124,58 +123,58 @@ namespace fuchsia
 		{
 			//
 		}
-		void React_LikeHover(object sender, EventArgs e)
+		void react_LikeHover(object sender, EventArgs e)
 		{
-			react_Like.ImageSize = new Size(27,27);
+			react_Like.ImageSize = new Size((react_Like.Size.Width/2+7),(react_Like.Size.Height/2+7));
 		}
-		void React_LikeMouseLeave(object sender, EventArgs e)
+		void react_LikeMouseLeave(object sender, EventArgs e)
 		{
-			react_Like.ImageSize = new Size(23,23);
+			react_Like.ImageSize = new Size((react_Like.Size.Width/2+3),(react_Like.Size.Height/2+3));
 		}
 		void React_LoveHover(object sender, EventArgs e)
 		{
-			react_Love.ImageSize = new Size(27,27);
+			react_Love.ImageSize = new Size((react_Like.Size.Width/2+7),(react_Like.Size.Height/2+7));
 		}
 		void React_LoveMouseLeave(object sender, EventArgs e)
 		{
-			react_Love.ImageSize = new Size(23,23);
+			react_Love.ImageSize = new Size((react_Like.Size.Width/2+3),(react_Like.Size.Height/2+3));
 		}
 		void React_HahaHover(object sender, EventArgs e)
 		{
-			react_Haha.ImageSize = new Size(27,27);
+			react_Haha.ImageSize = new Size((react_Like.Size.Width/2+7),(react_Like.Size.Height/2+7));
 		}
 		void React_HahaMouseLeave(object sender, EventArgs e)
 		{
-			react_Haha.ImageSize = new Size(23,23);
+			react_Haha.ImageSize = new Size((react_Like.Size.Width/2+3),(react_Like.Size.Height/2+3));
 		}
 		void React_SadHover(object sender, EventArgs e)
 		{
-			react_Sad.ImageSize = new Size(27,27);
+			react_Sad.ImageSize = new Size((react_Like.Size.Width/2+7),(react_Like.Size.Height/2+7));
 		}
 		void React_SadMouseLeave(object sender, EventArgs e)
 		{
-			react_Sad.ImageSize = new Size(23,23);
+			react_Sad.ImageSize = new Size((react_Like.Size.Width/2+3),(react_Like.Size.Height/2+3));
 		}
 		void React_WowHover(object sender, EventArgs e)
 		{
-			react_Wow.ImageSize = new Size(27,27);
+			react_Wow.ImageSize = new Size((react_Like.Size.Width/2+7),(react_Like.Size.Height/2+7));
 		}
 		void React_WowMouseLeave(object sender, EventArgs e)
 		{
-			react_Wow.ImageSize = new Size(23,23);
+			react_Wow.ImageSize = new Size((react_Like.Size.Width/2+3),(react_Like.Size.Height/2+3));
 		}
 		void React_AngryHover(object sender, EventArgs e)
 		{
-			react_Angry.ImageSize = new Size(27,27);
+			react_Angry.ImageSize = new Size((react_Like.Size.Width/2+7),(react_Like.Size.Height/2+7));
 		}
 		void React_AngryMouseLeave(object sender, EventArgs e)
 		{
-			react_Angry.ImageSize = new Size(23,23);
+			react_Angry.ImageSize = new Size((react_Like.Size.Width/2+3),(react_Like.Size.Height/2+3));
 		}
-		void React_LikeClick(object sender, EventArgs e)
+		void react_LikeClick(object sender, EventArgs e)
 		{
 			if(react == Reactions.none || react != Reactions.like){
-				chose_react.Location = new Point(react_Like.Location.X+10,40);
+				chose_react.Location = new Point(react_Like.Location.X+react_Like.Size.Width/4,react_Like.Size.Height);
 				chose_react.Show();
 				react = Reactions.like;
 				// add/change react stuff
@@ -188,7 +187,7 @@ namespace fuchsia
 		void React_HahaClick(object sender, EventArgs e)
 		{
 			if(react == Reactions.none || react != Reactions.haha){
-				chose_react.Location = new Point(react_Haha.Location.X+10,40);
+				chose_react.Location = new Point(react_Haha.Location.X+react_Like.Size.Width/4,react_Haha.Size.Height);
 				chose_react.Show();
 				react = Reactions.haha;
 				// add/change react stuff
@@ -201,7 +200,7 @@ namespace fuchsia
 		void React_LoveClick(object sender, EventArgs e)
 		{
 			if(react == Reactions.none || react != Reactions.love){
-				chose_react.Location = new Point(react_Love.Location.X+10,40);
+				chose_react.Location = new Point(react_Love.Location.X+react_Like.Size.Width/4,react_Love.Size.Height);
 				chose_react.Show();
 				react = Reactions.love;
 				// add/change react stuff
@@ -214,7 +213,7 @@ namespace fuchsia
 		void React_SadClick(object sender, EventArgs e)
 		{
 			if(react == Reactions.none || react != Reactions.sad){
-				chose_react.Location = new Point(react_Sad.Location.X+10,40);
+				chose_react.Location = new Point(react_Sad.Location.X+react_Like.Size.Width/4,react_Sad.Size.Height);
 				chose_react.Show();
 				react = Reactions.sad;
 				// add/change react stuff
@@ -227,7 +226,7 @@ namespace fuchsia
 		void React_AngryClick(object sender, EventArgs e)
 		{
 			if(react == Reactions.none || react != Reactions.angry){
-				chose_react.Location = new Point(react_Angry.Location.X+10,40);
+				chose_react.Location = new Point(react_Angry.Location.X+react_Like.Size.Width/4,react_Angry.Size.Height);
 				chose_react.Show();
 				react = Reactions.angry;
 				// add/change react stuff
@@ -240,7 +239,7 @@ namespace fuchsia
 		void React_WowClick(object sender, EventArgs e)
 		{
 			if(react == Reactions.none || react != Reactions.wow) {
-				chose_react.Location = new Point(react_Wow.Location.X+10,40);
+				chose_react.Location = new Point(react_Wow.Location.X+react_Like.Size.Width/4,react_Like.Size.Height);
 				chose_react.Show();
 				react = Reactions.wow;
 				// add/change react stuff

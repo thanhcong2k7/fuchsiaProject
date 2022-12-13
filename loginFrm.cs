@@ -16,7 +16,7 @@ namespace fuchsia
 	public partial class loginFrm : Form
 	{
 		private string usrn = "", upwd = "";
-		private string host = "http://localhost/fuchsia";
+		private string host = "http://localhost/fuchsia"; //server
 		public loginFrm(bool isFE, string bruh, string bruh2) //isFE = is file exists? ("Data/usr")
 		{
 			InitializeComponent();
