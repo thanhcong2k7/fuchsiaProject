@@ -88,7 +88,7 @@ namespace fuchsia
 			this.guna2Button1.HoverState.Parent = this.guna2Button1;
 			this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
 			this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-			this.guna2Button1.ImageOffset = new System.Drawing.Point(3, 0);
+			this.guna2Button1.ImageOffset = new System.Drawing.Point(2, 0);
 			this.guna2Button1.Location = new System.Drawing.Point(32, 144);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
@@ -354,6 +354,7 @@ namespace fuchsia
 			// 
 			this.nameLabel.AutoSize = true;
 			this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+			this.nameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.nameLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
 			this.nameLabel.Location = new System.Drawing.Point(63, 17);
@@ -361,6 +362,7 @@ namespace fuchsia
 			this.nameLabel.Size = new System.Drawing.Size(152, 20);
 			this.nameLabel.TabIndex = 5;
 			this.nameLabel.Text = "Nguyễn Thành Công";
+			this.nameLabel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NameLabelMouseClick);
 			// 
 			// guna2CirclePictureBox1
 			// 
