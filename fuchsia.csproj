@@ -124,6 +124,10 @@
     <Compile Include="msgBox.Designer.cs">
       <DependentUpon>msgBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="newPost.cs" />
+    <Compile Include="newPost.Designer.cs">
+      <DependentUpon>newPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="openImg.cs" />
     <Compile Include="openImg.Designer.cs">
       <DependentUpon>openImg.cs</DependentUpon>
@@ -150,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="msgBox.resx">
       <DependentUpon>msgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newPost.resx">
+      <DependentUpon>newPost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="openImg.resx">
       <DependentUpon>openImg.cs</DependentUpon>
