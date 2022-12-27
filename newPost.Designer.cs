@@ -21,6 +21,7 @@ namespace fuchsia
 		private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
 		private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
 		private Guna.UI2.WinForms.Guna2TextBox captionInput;
+		private Guna.UI2.WinForms.Guna2Button postBtn;
 		
 		/// <summary>
 		/// Disposes resources used by the control.
@@ -51,6 +52,7 @@ namespace fuchsia
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
 			this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
 			this.captionInput = new Guna.UI2.WinForms.Guna2TextBox();
+			this.postBtn = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
 			this.SuspendLayout();
@@ -185,10 +187,32 @@ namespace fuchsia
 			this.captionInput.TabIndex = 24;
 			this.captionInput.TextOffset = new System.Drawing.Point(5, 0);
 			// 
+			// postBtn
+			// 
+			this.postBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.postBtn.Animated = true;
+			this.postBtn.BackColor = System.Drawing.Color.Transparent;
+			this.postBtn.BorderRadius = 10;
+			this.postBtn.CheckedState.Parent = this.postBtn;
+			this.postBtn.CustomImages.Parent = this.postBtn;
+			this.postBtn.Enabled = false;
+			this.postBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(0)))), ((int)(((byte)(106)))));
+			this.postBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.postBtn.ForeColor = System.Drawing.Color.White;
+			this.postBtn.HoverState.Parent = this.postBtn;
+			this.postBtn.Location = new System.Drawing.Point(190, 236);
+			this.postBtn.Margin = new System.Windows.Forms.Padding(4);
+			this.postBtn.Name = "postBtn";
+			this.postBtn.ShadowDecoration.Parent = this.postBtn;
+			this.postBtn.Size = new System.Drawing.Size(328, 47);
+			this.postBtn.TabIndex = 28;
+			this.postBtn.Text = "Đăng";
+			// 
 			// newPost
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.postBtn);
 			this.Controls.Add(this.dndCtrl);
 			this.Controls.Add(this.guna2Button2);
 			this.Controls.Add(this.guna2Button3);

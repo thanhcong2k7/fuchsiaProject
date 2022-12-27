@@ -38,8 +38,8 @@ namespace fuchsia
 		}
 		
 		private void dndDrop(object sender, DragEventArgs e){
-			string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-			(new msgBox(files[0].Substring(files[0].Length-5, files[0].Length-1))).Show();
+			var files = (string[])e.Data.GetData(DataFormats.FileDrop);
+			//(new msgBox(files[0].Substring(files[0].Length-5, files[0].Length-1))).Show();
 			foreach (string f_name in files) {
 				string[] imgExt;
 				imgExt = new string[] {".png",".bmp",".gif",".jpg"};
@@ -56,6 +56,15 @@ namespace fuchsia
 					//
 				}
 			}
+		}
+
+		private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+		{
+			if (String.IsNullOrWhiteSpace(captionInput.Text))
+			{
+				//postBtn.Enabled = false;
+			}
+			//else postBtn.Enabled = true;
 		}
 	}
 }

@@ -24,14 +24,14 @@ namespace fuchsia
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
             initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
-            initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+            //initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
 			//(new loginForm()).Show();
             usr_ = user;
             pwd_ = passw;
             handleLnk.Text = "@" + user;
             postContainer.MouseWheel += postContainer_Scroll;
-            appName.Text = "fuchsia " + a.Version.ToString() + " - InDev";// + "." + minorV.ToString() + "." + patchV.ToString() + "-pre_alpha";
-            //
+            appName.Text = "fuchsia " + a.Version.ToString() + " - Preview";// + "." + minorV.ToString() + "." + patchV.ToString() + "-pre_alpha";
+            semibg.Hide();
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)
@@ -46,15 +46,6 @@ namespace fuchsia
 			//(new aboutWindow()).Show();
 		}
 
-		private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-		{
-			if (String.IsNullOrWhiteSpace(captionInput.Text))
-			{
-				postBtn.Enabled = false;
-			}
-			else postBtn.Enabled = true;
-		}
-
 		private void closeBtn_Click(object sender, EventArgs e)
 		{
 			//exit stuff
@@ -62,10 +53,6 @@ namespace fuchsia
 			Application.Exit();
 		}
 		private int pos = 10;
-		private void postBtn_Click(object sender, EventArgs e)
-		{
-			//send post stuff
-		}
 		private void initPost(string captTxt, string nameTxt, string dateT, Image postImg = null)
 		{
 			//get post stuff
@@ -138,6 +125,14 @@ namespace fuchsia
 		void MinimizeBtnClick(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Minimized;
+		}
+		private Panel semibg = new Panel(){
+			//Location = new Point(0,titleBar.Size.Height),
+			//Size = new Size(this.Size.Height-navBar.Size.Height-titleBar.Size.Height,this.Size.Width),
+			BackColor = Color.FromArgb(100,0,0,0)
+		};
+		void viewCtrl(Form anythinglmao){
+			//
 		}
 	}
 }
