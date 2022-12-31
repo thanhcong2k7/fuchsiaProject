@@ -14,3 +14,4 @@ D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.pdb
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.openImg.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.newPost.resources
 D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.viewProfile.resources
+D:\Projects\fuchsia\fuchsia\obj\Debug\fuchsia.settMan.resources

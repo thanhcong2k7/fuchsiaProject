@@ -78,6 +78,19 @@ namespace fuchsia
 				_userWatchingID = value;
 			}
 		}
+		public Image _avatar;
+		public Image avatar
+		{
+			get
+			{
+				return _avatar;
+			}
+			set
+			{
+				_avatar = value;
+				avatarCtrl.Image = value;
+			}
+		}
 		//max image height = 400
 		public Image _imgPost;
 		public Image imgPost

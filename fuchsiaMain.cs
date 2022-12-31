@@ -23,8 +23,8 @@ namespace fuchsia
 			InitializeComponent();
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
-            initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
-            //initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+            //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
+            initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
 			//(new loginForm()).Show();
             usr_ = user;
             pwd_ = passw;
@@ -32,6 +32,7 @@ namespace fuchsia
             postContainer.MouseWheel += postContainer_Scroll;
             appName.Text = "fuchsia " + a.Version.ToString() + " - Preview";// + "." + minorV.ToString() + "." + patchV.ToString() + "-pre_alpha";
             semibg.Hide();
+            chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)
@@ -129,10 +130,52 @@ namespace fuchsia
 		private Panel semibg = new Panel(){
 			//Location = new Point(0,titleBar.Size.Height),
 			//Size = new Size(this.Size.Height-navBar.Size.Height-titleBar.Size.Height,this.Size.Width),
-			BackColor = Color.FromArgb(100,0,0,0)
+			BackColor = Color.FromArgb(50,0,0,0)
 		};
-		void viewCtrl(Form anythinglmao){
-			//
+		void viewCtrl(Form anythinglmao){/*
+			this.Controls.Add(anythinglmao);
+			this.Controls.Add(semibg);
+			semibg.Show();
+			semibg.Size = new Size(this.Size.Height-navBar.Size.Height-titleBar.Size.Height,this.Size.Width);
+			semibg.Location = new Point((this.Size.Width-anythinglmao.Size.Width)/2,(this.Size.Height-anythinglmao.Size.Height)/2);//,titleBar.Size.Height);
+			semibg.BringToFront();
+			anythinglmao.Show();
+			anythinglmao.BringToFront();
+			anythinglmao.Disposed += (object sender, EventArgs e)=>{
+				anythinglmao.Hide();
+				semibg.Hide();
+				semibg.SendToBack();
+			};*/
+			anythinglmao.Show();
+			anythinglmao.FormClosing += (object sender, FormClosingEventArgs e) => {isSet = false;};
+		}
+		bool isSet = false;
+		void SettingsBtnClick(object sender, EventArgs e)
+		{
+			if(!isSet){
+				viewCtrl(new settMan());
+				isSet = !isSet;
+			}
+		}
+		void Guna2Button6Click(object sender, EventArgs e)
+		{
+			(new viewProfile()).Show();
+		}
+		void TagCtrlMouseClick(object sender, MouseEventArgs e)
+		{
+			(new viewProfile()).Show();
+		}
+		void NameTxtMouseClick(object sender, MouseEventArgs e)
+		{
+			(new viewProfile()).Show();
+		}
+		void HandleLnkMouseClick(object sender, MouseEventArgs e)
+		{
+			(new viewProfile()).Show();
+		}
+		void Guna2CirclePictureBox1MouseClick(object sender, MouseEventArgs e)
+		{
+			(new viewProfile()).Show();
 		}
 	}
 }
