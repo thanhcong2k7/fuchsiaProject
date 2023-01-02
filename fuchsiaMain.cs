@@ -25,6 +25,9 @@ namespace fuchsia
 			//initPost("test",userName,getUTC_Time());
             //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
             initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+            //
+            //postContainer.Size = new Size(postContainer.Size.Width, this.Size.Height-titleBar.Size.Height-navBar.Size.Height);
+            //
 			//(new loginForm()).Show();
             usr_ = user;
             pwd_ = passw;

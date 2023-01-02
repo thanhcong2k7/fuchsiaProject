@@ -134,7 +134,7 @@ namespace fuchsia
 			this.settingsBtn.HoverState.Parent = this.settingsBtn;
 			this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
 			this.settingsBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.settingsBtn.Location = new System.Drawing.Point(1484, 18);
+			this.settingsBtn.Location = new System.Drawing.Point(1766, 18);
 			this.settingsBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.settingsBtn.Name = "settingsBtn";
 			this.settingsBtn.ShadowDecoration.Parent = this.settingsBtn;
@@ -146,7 +146,7 @@ namespace fuchsia
 			// 
 			this.chooseTab_state.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.chooseTab_state.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(1)))), ((int)(((byte)(116)))));
-			this.chooseTab_state.Location = new System.Drawing.Point(752, 82);
+			this.chooseTab_state.Location = new System.Drawing.Point(619, 82);
 			this.chooseTab_state.Margin = new System.Windows.Forms.Padding(4);
 			this.chooseTab_state.Name = "chooseTab_state";
 			this.chooseTab_state.ShadowDecoration.Parent = this.chooseTab_state;
@@ -236,7 +236,7 @@ namespace fuchsia
 			this.homeBtn.HoverState.Parent = this.homeBtn;
 			this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
 			this.homeBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.homeBtn.Location = new System.Drawing.Point(752, 7);
+			this.homeBtn.Location = new System.Drawing.Point(733, 4);
 			this.homeBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.homeBtn.Name = "homeBtn";
 			this.homeBtn.ShadowDecoration.Parent = this.homeBtn;
@@ -257,7 +257,7 @@ namespace fuchsia
 			this.settings.ForeColor = System.Drawing.Color.White;
 			this.settings.HoverState.Parent = this.settings;
 			this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
-			this.settings.Location = new System.Drawing.Point(2257, 18);
+			this.settings.Location = new System.Drawing.Point(2539, 18);
 			this.settings.Margin = new System.Windows.Forms.Padding(4);
 			this.settings.Name = "settings";
 			this.settings.ShadowDecoration.Parent = this.settings;
@@ -277,7 +277,7 @@ namespace fuchsia
 			this.notiBtn.HoverState.Parent = this.notiBtn;
 			this.notiBtn.Image = ((System.Drawing.Image)(resources.GetObject("notiBtn.Image")));
 			this.notiBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.notiBtn.Location = new System.Drawing.Point(843, 7);
+			this.notiBtn.Location = new System.Drawing.Point(824, 4);
 			this.notiBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.notiBtn.Name = "notiBtn";
 			this.notiBtn.ShadowDecoration.Parent = this.notiBtn;
@@ -301,7 +301,7 @@ namespace fuchsia
 			this.guna2Button1.HoverState.Parent = this.guna2Button1;
 			this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
 			this.guna2Button1.ImageSize = new System.Drawing.Size(19, 19);
-			this.guna2Button1.Location = new System.Drawing.Point(1549, 17);
+			this.guna2Button1.Location = new System.Drawing.Point(1831, 17);
 			this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
@@ -323,7 +323,7 @@ namespace fuchsia
 			this.msgBtn.HoverState.Parent = this.msgBtn;
 			this.msgBtn.Image = ((System.Drawing.Image)(resources.GetObject("msgBtn.Image")));
 			this.msgBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.msgBtn.Location = new System.Drawing.Point(934, 7);
+			this.msgBtn.Location = new System.Drawing.Point(915, 4);
 			this.msgBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.msgBtn.Name = "msgBtn";
 			this.msgBtn.ShadowDecoration.Parent = this.msgBtn;
@@ -391,7 +391,7 @@ namespace fuchsia
 			this.minimizeBtn.HoverState.Parent = this.minimizeBtn;
 			this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
 			this.minimizeBtn.ImageSize = new System.Drawing.Size(12, 12);
-			this.minimizeBtn.Location = new System.Drawing.Point(1616, 5);
+			this.minimizeBtn.Location = new System.Drawing.Point(1617, 4);
 			this.minimizeBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.minimizeBtn.Name = "minimizeBtn";
 			this.minimizeBtn.ShadowDecoration.Parent = this.minimizeBtn;
@@ -415,7 +415,7 @@ namespace fuchsia
 			this.maximizeBtn.HoverState.Parent = this.maximizeBtn;
 			this.maximizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("maximizeBtn.Image")));
 			this.maximizeBtn.ImageSize = new System.Drawing.Size(12, 12);
-			this.maximizeBtn.Location = new System.Drawing.Point(1652, 5);
+			this.maximizeBtn.Location = new System.Drawing.Point(1653, 4);
 			this.maximizeBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.maximizeBtn.Name = "maximizeBtn";
 			this.maximizeBtn.ShadowDecoration.Parent = this.maximizeBtn;
@@ -438,7 +438,7 @@ namespace fuchsia
 			this.closeBtn.HoverState.Parent = this.closeBtn;
 			this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
 			this.closeBtn.ImageSize = new System.Drawing.Size(12, 12);
-			this.closeBtn.Location = new System.Drawing.Point(1688, 5);
+			this.closeBtn.Location = new System.Drawing.Point(1689, 4);
 			this.closeBtn.Margin = new System.Windows.Forms.Padding(4);
 			this.closeBtn.Name = "closeBtn";
 			this.closeBtn.ShadowDecoration.Parent = this.closeBtn;
@@ -646,6 +646,9 @@ namespace fuchsia
 			// 
 			// home
 			// 
+			this.home.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.home.Controls.Add(this.newPost);
 			this.home.Controls.Add(this.postContainer);
 			this.home.Location = new System.Drawing.Point(375, 42);
@@ -672,7 +675,7 @@ namespace fuchsia
 			this.newPost.Margin = new System.Windows.Forms.Padding(4);
 			this.newPost.Name = "newPost";
 			this.newPost.ShadowDecoration.Parent = this.newPost;
-			this.newPost.Size = new System.Drawing.Size(980, 58);
+			this.newPost.Size = new System.Drawing.Size(977, 58);
 			this.newPost.TabIndex = 13;
 			this.newPost.Text = "+ Tạo bài viết mới";
 			// 
@@ -685,11 +688,14 @@ namespace fuchsia
 			this.postContainer.Location = new System.Drawing.Point(0, 80);
 			this.postContainer.Margin = new System.Windows.Forms.Padding(4);
 			this.postContainer.Name = "postContainer";
-			this.postContainer.Size = new System.Drawing.Size(1020, 718);
+			this.postContainer.Size = new System.Drawing.Size(1016, 718);
 			this.postContainer.TabIndex = 12;
 			// 
 			// notif
 			// 
+			this.notif.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.notif.Controls.Add(this.label6);
 			this.notif.Controls.Add(this.label7);
 			this.notif.Controls.Add(this.label8);
@@ -767,6 +773,9 @@ namespace fuchsia
 			// 
 			// message_vchat
 			// 
+			this.message_vchat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.message_vchat.Controls.Add(this.label5);
 			this.message_vchat.Controls.Add(this.label4);
 			this.message_vchat.Controls.Add(this.label3);
@@ -846,9 +855,10 @@ namespace fuchsia
 			// 
 			this.panel2.Controls.Add(this.guna2Button5);
 			this.panel2.Controls.Add(this.flowLayoutPanel2);
-			this.panel2.Location = new System.Drawing.Point(1409, 38);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel2.Location = new System.Drawing.Point(1410, 37);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(315, 811);
+			this.panel2.Size = new System.Drawing.Size(315, 812);
 			this.panel2.TabIndex = 25;
 			// 
 			// guna2Button5
