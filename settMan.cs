@@ -20,6 +20,7 @@ namespace fuchsia
 	public partial class settMan : Form
 	{
 		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
+		private string hostTxt = "https://raw.githubusercontent.com/thanhcong2k7/main/";
 		public settMan()
 		{
 			//
@@ -31,15 +32,33 @@ namespace fuchsia
 			label9.Text = "Version "+ a.Version.ToString() + "-preview";
 			nameTxtCtrl.Text = "Test User";
 			handleTxtCtrl.Text = "admin";
+			getsettings(); //get setting stuff
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
 		bool isfull = true;
+		private void getsettings(){
+			//avatar.Image =
+		}
 		void Guna2Button1Click(object sender, EventArgs e)
 		{
-			side.Size = (isfull?(new Size(58,side.Size.Height)):(new Size(268,side.Size.Height)));
+			//side.Size = (isfull?(new Size(58,side.Size.Height)):(new Size(268,side.Size.Height)));
+			splitContainer1.SplitterDistance = (isfull?60:200);
 			isfull = !isfull;
+			if (isfull){
+				accSetbtn.Text = "Tài khoản";
+				guiSetbtn.Text = "Giao diện";
+				notifSetbtn.Text = "Thông báo";
+				privSetbtn.Text="Bảo mật";
+				aboutBtn.Text = "About fuchsia Project";
+			} else {
+				accSetbtn.Text = "";
+				guiSetbtn.Text = "";
+				notifSetbtn.Text = "";
+				privSetbtn.Text = "";
+				aboutBtn.Text = "";
+			}
 			//accSet.Location = new Point();
 		}
 		void Guna2Button2Click(object sender, EventArgs e)
@@ -52,6 +71,7 @@ namespace fuchsia
 		{
 			sel.Show();
 			sel.Location = new Point(guiSetbtn.Location.X-4, guiSetbtn.Location.Y);
+			guiSet.BringToFront();
 		}
 		void NotifSetClick(object sender, EventArgs e)
 		{
@@ -98,6 +118,10 @@ namespace fuchsia
 		{
 			//discord
 			//System.Diagnostics.Process.Start("https://www.facebook.com/kmdev.4307");
+		}
+		void Guna2ComboBox1SelectedIndexChanged(object sender, EventArgs e)
+		{
+			//
 		}
 	}
 }

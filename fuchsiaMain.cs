@@ -24,8 +24,8 @@ namespace fuchsia
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
             //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
-            initPost("dep chai top 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
-            //
+            initPost("dep chai so 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+            //test
             //postContainer.Size = new Size(postContainer.Size.Width, this.Size.Height-titleBar.Size.Height-navBar.Size.Height);
             //
 			//(new loginForm()).Show();
@@ -162,23 +162,23 @@ namespace fuchsia
 		}
 		void Guna2Button6Click(object sender, EventArgs e)
 		{
-			(new viewProfile()).Show();
+			(new viewProfile(userID)).Show();
 		}
 		void TagCtrlMouseClick(object sender, MouseEventArgs e)
 		{
-			(new viewProfile()).Show();
+			(new viewProfile(userID)).Show();
 		}
 		void NameTxtMouseClick(object sender, MouseEventArgs e)
 		{
-			(new viewProfile()).Show();
+			(new viewProfile(userID)).Show();
 		}
 		void HandleLnkMouseClick(object sender, MouseEventArgs e)
 		{
-			(new viewProfile()).Show();
+			(new viewProfile(userID)).Show();
 		}
 		void Guna2CirclePictureBox1MouseClick(object sender, MouseEventArgs e)
 		{
-			(new viewProfile()).Show();
+			(new viewProfile(userID)).Show();
 		}
 	}
 }

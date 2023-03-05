@@ -69,7 +69,7 @@ namespace fuchsia
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(68, 16);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Thông báo!";
+			this.label2.Text = "Thông báo";
 			// 
 			// label1
 			// 

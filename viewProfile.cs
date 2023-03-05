@@ -23,12 +23,14 @@ namespace fuchsia
 	public partial class viewProfile : Form
 	{
 		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
-		public viewProfile()
+		private string viewID = "";
+		public viewProfile(string ID)
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			viewID = ID;
 			resizeImage(cover.Image, (new Size(avatar.Size.Width,avatar.Size.Height)));
 			//
 			handle_tip.SetToolTip(handle,"Bấm để sao chép");
