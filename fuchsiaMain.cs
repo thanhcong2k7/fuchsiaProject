@@ -10,6 +10,7 @@ using System.Net;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
+using WMPLib;
 namespace fuchsia
 {
 	public sealed partial class fuchsiaMain : Form
@@ -18,9 +19,18 @@ namespace fuchsia
 		public string userName = "Nguyễn Thành Công";
 		private string usr_ = "", pwd_ = "";
 		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
+		//System.Media.SoundPlayer player = new System.Media.SoundPlayer(){SoundLocation = "./Data/videoplayback.m4a"};
+		WindowsMediaPlayer player = new WindowsMediaPlayer(){URL = "./Data/videoplayback.mp3"};
+		public int timeMusic=0, totaltimeMusic=0;
 		public fuchsiaMain(string user, string passw)
 		{
 			InitializeComponent();
+			player.controls.stop();
+			//init player
+			totaltimeMusic = Convert.ToInt32(Math.Floor(player.currentMedia.duration));
+			MessageBox.Show(player.currentMedia.duration.ToString());
+			string minutes = Convert.ToInt32(totaltimeMusic/60).ToString();
+			totalTime.Text = (minutes.Length>1?minutes:"0"+minutes) + ":" + (totaltimeMusic-Convert.ToInt32(totaltimeMusic/60)*60).ToString();
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
             //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
@@ -32,11 +42,11 @@ namespace fuchsia
 			//(new loginForm()).Show();
             usr_ = user;
             pwd_ = passw;
-            handleLnk.Text = "@" + user;
+            //handleLnk.Text = "@" + user;
             postContainer.MouseWheel += postContainer_Scroll;
             appName.Text = "fuchsia " + a.Version.ToString() + " - Preview";// + "." + minorV.ToString() + "." + patchV.ToString() + "-pre_alpha";
             semibg.Hide();
-            chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
+            //chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
 			this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
 			postContainer.VerticalScroll.Visible = true;
 			postContainer.WrapContents = true;
@@ -84,17 +94,17 @@ namespace fuchsia
 
         private void tagctrl_hover(object sender, EventArgs e)
         {
-            tagCtrl.FillColor = Color.FromArgb(50, 51, 52);
+            //tagCtrl.FillColor = Color.FromArgb(50, 51, 52);
         }
 
         private void tagCtrl_MouseLeave(object sender, EventArgs e)
         {
-            tagCtrl.FillColor = Color.Transparent;
+            //tagCtrl.FillColor = Color.Transparent;
         }
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
-            chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
+            //chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
             homeBtn.FillColor = Color.FromArgb(65, 66, 67);
             msgBtn.FillColor = Color.Transparent;
             notiBtn.FillColor = Color.Transparent;
@@ -103,7 +113,7 @@ namespace fuchsia
 
         private void msgBtn_Click(object sender, EventArgs e)
         {
-            chooseTab_state.Location = new Point(msgBtn.Location.X, msgBtn.Location.Y + msgBtn.Size.Height);
+            //chooseTab_state.Location = new Point(msgBtn.Location.X, msgBtn.Location.Y + msgBtn.Size.Height);
             msgBtn.FillColor = Color.FromArgb(65, 66, 67);
             homeBtn.FillColor = Color.Transparent;
             notiBtn.FillColor = Color.Transparent;
@@ -112,7 +122,7 @@ namespace fuchsia
 
         private void notiBtn_Click(object sender, EventArgs e)
         {
-            chooseTab_state.Location = new Point(notiBtn.Location.X, notiBtn.Location.Y + notiBtn.Size.Height);
+            //chooseTab_state.Location = new Point(notiBtn.Location.X, notiBtn.Location.Y + notiBtn.Size.Height);
             notiBtn.FillColor = Color.FromArgb(65, 66, 67);
             homeBtn.FillColor = Color.Transparent;
             msgBtn.FillColor = Color.Transparent;
@@ -193,6 +203,14 @@ namespace fuchsia
 				bk = this.Size;
 				this.WindowState = FormWindowState.Maximized;
 			} else {this.WindowState = FormWindowState.Normal;this.Size = bk;}
+		}
+		void Guna2GradientCircleButton1Click(object sender, EventArgs e)
+		{
+			player.controls.play();
+		}
+		void Guna2GradientCircleButton2Click(object sender, EventArgs e)
+		{
+			player.controls.pause();
 		}
 	}
 }

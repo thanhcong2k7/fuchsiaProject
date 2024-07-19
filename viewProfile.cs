@@ -30,6 +30,9 @@ namespace fuchsia
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+			post.WrapContents = true;
+			post.AutoScroll = true;
+			post.VerticalScroll.Visible = true;
 			viewID = ID;
 			resizeImage(cover.Image, (new Size(avatar.Size.Width,avatar.Size.Height)));
 			//

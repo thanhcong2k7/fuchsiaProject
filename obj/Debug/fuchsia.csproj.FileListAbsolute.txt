@@ -32,3 +32,6 @@ D:\fuchsiaProject\obj\Debug\fuchsia.viewProfile.resources
 D:\fuchsiaProject\obj\Debug\fuchsia.csproj.GenerateResource.Cache
 D:\fuchsiaProject\obj\Debug\fuchsia.exe
 D:\fuchsiaProject\obj\Debug\fuchsia.pdb
+D:\fuchsiaProject\bin\Debug\Interop.WMPLib.dll
+D:\fuchsiaProject\obj\Debug\Interop.WMPLib.dll
+D:\fuchsiaProject\obj\Debug\fuchsia.csproj.ResolveComReference.cache
