@@ -23,6 +23,7 @@ namespace fuchsia
 		private System.Windows.Forms.Label appName;
 		private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
 		private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
+		private System.Windows.Forms.Label label1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -56,6 +57,7 @@ namespace fuchsia
 			this.appName = new System.Windows.Forms.Label();
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
 			this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
 			this.titleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
@@ -66,13 +68,14 @@ namespace fuchsia
 			this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
 			| System.Windows.Forms.AnchorStyles.Left) 
 			| System.Windows.Forms.AnchorStyles.Right)));
-			this.guna2PictureBox1.Location = new System.Drawing.Point(12, 36);
+			this.guna2PictureBox1.Location = new System.Drawing.Point(12, 61);
 			this.guna2PictureBox1.Name = "guna2PictureBox1";
 			this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-			this.guna2PictureBox1.Size = new System.Drawing.Size(1164, 605);
+			this.guna2PictureBox1.Size = new System.Drawing.Size(785, 411);
 			this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.guna2PictureBox1.TabIndex = 0;
 			this.guna2PictureBox1.TabStop = false;
+			this.guna2PictureBox1.Click += new System.EventHandler(this.Guna2PictureBox1Click);
 			// 
 			// titleBar
 			// 
@@ -88,7 +91,7 @@ namespace fuchsia
 			this.titleBar.Location = new System.Drawing.Point(0, 0);
 			this.titleBar.Name = "titleBar";
 			this.titleBar.ShadowDecoration.Parent = this.titleBar;
-			this.titleBar.Size = new System.Drawing.Size(1188, 30);
+			this.titleBar.Size = new System.Drawing.Size(809, 30);
 			this.titleBar.TabIndex = 10;
 			// 
 			// minimizeBtn
@@ -107,7 +110,7 @@ namespace fuchsia
 			this.minimizeBtn.HoverState.Parent = this.minimizeBtn;
 			this.minimizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("minimizeBtn.Image")));
 			this.minimizeBtn.ImageSize = new System.Drawing.Size(12, 12);
-			this.minimizeBtn.Location = new System.Drawing.Point(1106, 4);
+			this.minimizeBtn.Location = new System.Drawing.Point(727, 4);
 			this.minimizeBtn.Name = "minimizeBtn";
 			this.minimizeBtn.ShadowDecoration.Parent = this.minimizeBtn;
 			this.minimizeBtn.Size = new System.Drawing.Size(23, 23);
@@ -130,7 +133,7 @@ namespace fuchsia
 			this.maximizeBtn.HoverState.Parent = this.maximizeBtn;
 			this.maximizeBtn.Image = ((System.Drawing.Image)(resources.GetObject("maximizeBtn.Image")));
 			this.maximizeBtn.ImageSize = new System.Drawing.Size(12, 12);
-			this.maximizeBtn.Location = new System.Drawing.Point(1133, 4);
+			this.maximizeBtn.Location = new System.Drawing.Point(754, 4);
 			this.maximizeBtn.Name = "maximizeBtn";
 			this.maximizeBtn.ShadowDecoration.Parent = this.maximizeBtn;
 			this.maximizeBtn.Size = new System.Drawing.Size(23, 23);
@@ -153,7 +156,7 @@ namespace fuchsia
 			this.closeBtn.HoverState.Parent = this.closeBtn;
 			this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
 			this.closeBtn.ImageSize = new System.Drawing.Size(12, 12);
-			this.closeBtn.Location = new System.Drawing.Point(1160, 4);
+			this.closeBtn.Location = new System.Drawing.Point(781, 4);
 			this.closeBtn.Name = "closeBtn";
 			this.closeBtn.ShadowDecoration.Parent = this.closeBtn;
 			this.closeBtn.Size = new System.Drawing.Size(23, 23);
@@ -194,15 +197,29 @@ namespace fuchsia
 			// 
 			this.guna2DragControl3.TargetControl = this.titleBar;
 			// 
+			// label1
+			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.ForeColor = System.Drawing.Color.Silver;
+			this.label1.Location = new System.Drawing.Point(12, 37);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(785, 23);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "Click on image to choose where to save!";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// openImg
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(27)))));
-			this.ClientSize = new System.Drawing.Size(1188, 653);
+			this.ClientSize = new System.Drawing.Size(809, 484);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.titleBar);
 			this.Controls.Add(this.guna2PictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "openImg";
 			this.Text = "openImg";
 			((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

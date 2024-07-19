@@ -12,7 +12,7 @@ using System.IO;
 using System.Reflection;
 namespace fuchsia
 {
-	public partial class fuchsiaMain : Form
+	public sealed partial class fuchsiaMain : Form
 	{
 		public string userID = "abcxyz";
 		public string userName = "Nguyễn Thành Công";
@@ -24,7 +24,8 @@ namespace fuchsia
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
             //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
-            initPost("dep chai so 1 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
+			initPost("dep chai so 1 vi en", userName, "00:00 00/00/0000", null);
+            initPost("dep chai so 2 vi en", userName, "00:00 00/00/0000", Image.FromFile("testImg/ab.jpg"));
             //test
             //postContainer.Size = new Size(postContainer.Size.Width, this.Size.Height-titleBar.Size.Height-navBar.Size.Height);
             //
@@ -36,6 +37,7 @@ namespace fuchsia
             appName.Text = "fuchsia " + a.Version.ToString() + " - Preview";// + "." + minorV.ToString() + "." + patchV.ToString() + "-pre_alpha";
             semibg.Hide();
             chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
+			this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)
@@ -69,8 +71,8 @@ namespace fuchsia
 				dateposted=dateT,
 				userWatchingID = userID,
 				//Location = new Point(5,pos),
-				Anchor = AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right,
 				Size = new Size(postContainer.Size.Width,200),
+				Anchor = AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right,
 				imgPost = postImg
 			});
 			pos += 220;
@@ -179,6 +181,14 @@ namespace fuchsia
 		void Guna2CirclePictureBox1MouseClick(object sender, MouseEventArgs e)
 		{
 			(new viewProfile(userID)).Show();
+		}
+		Size bk = new Size();
+		void MaximizeBtnClick(object sender, EventArgs e)
+		{
+			if (this.WindowState!=FormWindowState.Maximized){
+				bk = this.Size;
+				this.WindowState = FormWindowState.Maximized;
+			} else {this.WindowState = FormWindowState.Normal;this.Size = bk;}
 		}
 	}
 }
