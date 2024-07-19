@@ -38,6 +38,9 @@ namespace fuchsia
             semibg.Hide();
             chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
 			this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
+			postContainer.VerticalScroll.Visible = true;
+			postContainer.WrapContents = true;
+			postContainer.AutoScroll = true;
 		}
 
 		private void guna2Button1_Click(object sender, EventArgs e)
@@ -71,9 +74,10 @@ namespace fuchsia
 				dateposted=dateT,
 				userWatchingID = userID,
 				//Location = new Point(5,pos),
-				Size = new Size(postContainer.Size.Width,200),
+				Size = new Size(postContainer.Size.Width-30,200),
 				Anchor = AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right,
-				imgPost = postImg
+				imgPost = postImg,
+				BackColor = Color.FromArgb(25, 26, 27)
 			});
 			pos += 220;
 		}

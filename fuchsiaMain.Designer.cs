@@ -229,7 +229,7 @@ namespace fuchsia
 			this.homeBtn.HoverState.Parent = this.homeBtn;
 			this.homeBtn.Image = ((System.Drawing.Image)(resources.GetObject("homeBtn.Image")));
 			this.homeBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.homeBtn.Location = new System.Drawing.Point(550, 3);
+			this.homeBtn.Location = new System.Drawing.Point(551, 3);
 			this.homeBtn.Name = "homeBtn";
 			this.homeBtn.ShadowDecoration.Parent = this.homeBtn;
 			this.homeBtn.Size = new System.Drawing.Size(65, 65);
@@ -294,7 +294,7 @@ namespace fuchsia
 			this.msgBtn.HoverState.Parent = this.msgBtn;
 			this.msgBtn.Image = ((System.Drawing.Image)(resources.GetObject("msgBtn.Image")));
 			this.msgBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.msgBtn.Location = new System.Drawing.Point(686, 3);
+			this.msgBtn.Location = new System.Drawing.Point(685, 3);
 			this.msgBtn.Name = "msgBtn";
 			this.msgBtn.ShadowDecoration.Parent = this.msgBtn;
 			this.msgBtn.Size = new System.Drawing.Size(65, 65);
@@ -829,6 +829,7 @@ namespace fuchsia
 			// 
 			// guna2Button5
 			// 
+			this.guna2Button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.guna2Button5.BorderRadius = 10;
 			this.guna2Button5.CheckedState.Parent = this.guna2Button5;
 			this.guna2Button5.CustomImages.Parent = this.guna2Button5;

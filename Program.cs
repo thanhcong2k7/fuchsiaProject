@@ -23,13 +23,13 @@ namespace fuchsia
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//Check host
-			TcpClient cli = new TcpClient();
+			var cli = new TcpClient();
 			bool tmp_test = false;
 			try
 			{
 				cli.Connect("localhost",80);
 				//Check info file exist
-				string curFile = @"Data/usr2";
+				const string curFile = @"Data/usr2";
 				string[] bruhstr = { "0", "0" };
 				bool bruhbr = false;
 				if (File.Exists(curFile))
