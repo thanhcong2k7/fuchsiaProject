@@ -32,7 +32,8 @@ namespace fuchsia
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fuchsiaMain));
 			this.navBar = new Guna.UI2.WinForms.Guna2Panel();
-			this.guna2GradientCircleButton2 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+			this.playlistBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+			this.loopBtn = new Guna.UI2.WinForms.Guna2CircleButton();
 			this.guna2GradientCircleButton1 = new Guna.UI2.WinForms.Guna2GradientCircleButton();
 			this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
 			this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -56,7 +57,7 @@ namespace fuchsia
 			this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
 			this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
 			this.label10 = new System.Windows.Forms.Label();
-			this.avatar = new Guna.UI2.WinForms.Guna2PictureBox();
+			this.avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.cover = new Guna.UI2.WinForms.Guna2PictureBox();
 			this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -80,6 +81,9 @@ namespace fuchsia
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
 			this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
 			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.notifBox = new System.Windows.Forms.Panel();
+			this.notifCont = new System.Windows.Forms.FlowLayoutPanel();
+			this.label12 = new System.Windows.Forms.Label();
 			this.navBar.SuspendLayout();
 			this.titleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
@@ -93,13 +97,15 @@ namespace fuchsia
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.panel2.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
+			this.notifBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// navBar
 			// 
 			this.navBar.BackColor = System.Drawing.Color.Transparent;
 			this.navBar.BorderRadius = 10;
-			this.navBar.Controls.Add(this.guna2GradientCircleButton2);
+			this.navBar.Controls.Add(this.playlistBtn);
+			this.navBar.Controls.Add(this.loopBtn);
 			this.navBar.Controls.Add(this.guna2GradientCircleButton1);
 			this.navBar.Controls.Add(this.guna2CircleButton3);
 			this.navBar.Controls.Add(this.guna2CircleButton1);
@@ -116,22 +122,37 @@ namespace fuchsia
 			this.navBar.Size = new System.Drawing.Size(1294, 74);
 			this.navBar.TabIndex = 0;
 			// 
-			// guna2GradientCircleButton2
+			// playlistBtn
 			// 
-			this.guna2GradientCircleButton2.CheckedState.Parent = this.guna2GradientCircleButton2;
-			this.guna2GradientCircleButton2.CustomImages.Parent = this.guna2GradientCircleButton2;
-			this.guna2GradientCircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.guna2GradientCircleButton2.ForeColor = System.Drawing.Color.White;
-			this.guna2GradientCircleButton2.HoverState.Parent = this.guna2GradientCircleButton2;
-			this.guna2GradientCircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientCircleButton2.Image")));
-			this.guna2GradientCircleButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.guna2GradientCircleButton2.Location = new System.Drawing.Point(144, 15);
-			this.guna2GradientCircleButton2.Name = "guna2GradientCircleButton2";
-			this.guna2GradientCircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-			this.guna2GradientCircleButton2.ShadowDecoration.Parent = this.guna2GradientCircleButton2;
-			this.guna2GradientCircleButton2.Size = new System.Drawing.Size(40, 40);
-			this.guna2GradientCircleButton2.TabIndex = 23;
-			this.guna2GradientCircleButton2.Click += new System.EventHandler(this.Guna2GradientCircleButton2Click);
+			this.playlistBtn.CheckedState.Parent = this.playlistBtn;
+			this.playlistBtn.CustomImages.Parent = this.playlistBtn;
+			this.playlistBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(43)))));
+			this.playlistBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.playlistBtn.ForeColor = System.Drawing.Color.White;
+			this.playlistBtn.HoverState.Parent = this.playlistBtn;
+			this.playlistBtn.Image = ((System.Drawing.Image)(resources.GetObject("playlistBtn.Image")));
+			this.playlistBtn.Location = new System.Drawing.Point(1111, 16);
+			this.playlistBtn.Name = "playlistBtn";
+			this.playlistBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+			this.playlistBtn.ShadowDecoration.Parent = this.playlistBtn;
+			this.playlistBtn.Size = new System.Drawing.Size(40, 40);
+			this.playlistBtn.TabIndex = 25;
+			// 
+			// loopBtn
+			// 
+			this.loopBtn.CheckedState.Parent = this.loopBtn;
+			this.loopBtn.CustomImages.Parent = this.loopBtn;
+			this.loopBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(43)))));
+			this.loopBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.loopBtn.ForeColor = System.Drawing.Color.White;
+			this.loopBtn.HoverState.Parent = this.loopBtn;
+			this.loopBtn.Image = ((System.Drawing.Image)(resources.GetObject("loopBtn.Image")));
+			this.loopBtn.Location = new System.Drawing.Point(1065, 16);
+			this.loopBtn.Name = "loopBtn";
+			this.loopBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+			this.loopBtn.ShadowDecoration.Parent = this.loopBtn;
+			this.loopBtn.Size = new System.Drawing.Size(40, 40);
+			this.loopBtn.TabIndex = 24;
 			// 
 			// guna2GradientCircleButton1
 			// 
@@ -159,12 +180,13 @@ namespace fuchsia
 			this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
 			this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
 			this.guna2CircleButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton3.Image")));
-			this.guna2CircleButton3.Location = new System.Drawing.Point(190, 15);
+			this.guna2CircleButton3.Location = new System.Drawing.Point(144, 15);
 			this.guna2CircleButton3.Name = "guna2CircleButton3";
 			this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
 			this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
 			this.guna2CircleButton3.Size = new System.Drawing.Size(40, 40);
 			this.guna2CircleButton3.TabIndex = 21;
+			this.guna2CircleButton3.Click += new System.EventHandler(this.Guna2CircleButton3Click);
 			// 
 			// guna2CircleButton1
 			// 
@@ -184,6 +206,7 @@ namespace fuchsia
 			// 
 			// totalTime
 			// 
+			this.totalTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.totalTime.BackColor = System.Drawing.Color.Transparent;
 			this.totalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.totalTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
@@ -196,6 +219,7 @@ namespace fuchsia
 			// 
 			// timeProg
 			// 
+			this.timeProg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.timeProg.BackColor = System.Drawing.Color.Transparent;
 			this.timeProg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.timeProg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
@@ -208,18 +232,22 @@ namespace fuchsia
 			// 
 			// label11
 			// 
+			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label11.BackColor = System.Drawing.Color.Transparent;
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-			this.label11.Location = new System.Drawing.Point(283, 9);
+			this.label11.Location = new System.Drawing.Point(359, 9);
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(762, 26);
+			this.label11.Size = new System.Drawing.Size(610, 26);
 			this.label11.TabIndex = 16;
-			this.label11.Text = "Now playing: Zrtee - Nostalgia";
+			this.label11.Text = "Đang nghe: Zrtee - Nostalgia";
 			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// guna2TrackBar1
 			// 
+			this.guna2TrackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.guna2TrackBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
 			this.guna2TrackBar1.HoverState.Parent = this.guna2TrackBar1;
 			this.guna2TrackBar1.Location = new System.Drawing.Point(369, 38);
@@ -265,10 +293,10 @@ namespace fuchsia
 			this.settingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("settingsBtn.Image")));
 			this.settingsBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.settingsBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.settingsBtn.Location = new System.Drawing.Point(12, 613);
+			this.settingsBtn.Location = new System.Drawing.Point(12, 609);
 			this.settingsBtn.Name = "settingsBtn";
 			this.settingsBtn.ShadowDecoration.Parent = this.settingsBtn;
-			this.settingsBtn.Size = new System.Drawing.Size(243, 34);
+			this.settingsBtn.Size = new System.Drawing.Size(243, 38);
 			this.settingsBtn.TabIndex = 8;
 			this.settingsBtn.Text = "Cài đặt";
 			this.settingsBtn.Click += new System.EventHandler(this.SettingsBtnClick);
@@ -290,7 +318,7 @@ namespace fuchsia
 			this.homeBtn.Location = new System.Drawing.Point(7, 245);
 			this.homeBtn.Name = "homeBtn";
 			this.homeBtn.ShadowDecoration.Parent = this.homeBtn;
-			this.homeBtn.Size = new System.Drawing.Size(252, 65);
+			this.homeBtn.Size = new System.Drawing.Size(252, 47);
 			this.homeBtn.TabIndex = 1;
 			this.homeBtn.Text = "Trang chủ";
 			this.homeBtn.Click += new System.EventHandler(this.homeBtn_Click);
@@ -309,10 +337,10 @@ namespace fuchsia
 			this.notiBtn.Image = ((System.Drawing.Image)(resources.GetObject("notiBtn.Image")));
 			this.notiBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.notiBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.notiBtn.Location = new System.Drawing.Point(7, 313);
+			this.notiBtn.Location = new System.Drawing.Point(7, 295);
 			this.notiBtn.Name = "notiBtn";
 			this.notiBtn.ShadowDecoration.Parent = this.notiBtn;
-			this.notiBtn.Size = new System.Drawing.Size(253, 65);
+			this.notiBtn.Size = new System.Drawing.Size(253, 47);
 			this.notiBtn.TabIndex = 6;
 			this.notiBtn.Text = "Thông báo";
 			this.notiBtn.Click += new System.EventHandler(this.notiBtn_Click);
@@ -331,10 +359,10 @@ namespace fuchsia
 			this.msgBtn.Image = ((System.Drawing.Image)(resources.GetObject("msgBtn.Image")));
 			this.msgBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.msgBtn.ImageSize = new System.Drawing.Size(25, 25);
-			this.msgBtn.Location = new System.Drawing.Point(7, 381);
+			this.msgBtn.Location = new System.Drawing.Point(7, 345);
 			this.msgBtn.Name = "msgBtn";
 			this.msgBtn.ShadowDecoration.Parent = this.msgBtn;
-			this.msgBtn.Size = new System.Drawing.Size(252, 65);
+			this.msgBtn.Size = new System.Drawing.Size(252, 47);
 			this.msgBtn.TabIndex = 5;
 			this.msgBtn.Text = "Tin nhắn";
 			this.msgBtn.Click += new System.EventHandler(this.msgBtn_Click);
@@ -494,9 +522,7 @@ namespace fuchsia
 			// 
 			// avatar
 			// 
-			this.avatar.AutoRoundedCorners = true;
 			this.avatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.avatar.BorderRadius = 44;
 			this.avatar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.avatar.Image = ((System.Drawing.Image)(resources.GetObject("avatar.Image")));
 			this.avatar.Location = new System.Drawing.Point(89, 47);
@@ -786,6 +812,37 @@ namespace fuchsia
 			this.guna2Panel2.Size = new System.Drawing.Size(226, 137);
 			this.guna2Panel2.TabIndex = 1;
 			// 
+			// notifBox
+			// 
+			this.notifBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.notifBox.Controls.Add(this.notifCont);
+			this.notifBox.Controls.Add(this.label12);
+			this.notifBox.Location = new System.Drawing.Point(281, 34);
+			this.notifBox.Name = "notifBox";
+			this.notifBox.Size = new System.Drawing.Size(765, 648);
+			this.notifBox.TabIndex = 23;
+			// 
+			// notifCont
+			// 
+			this.notifCont.Location = new System.Drawing.Point(4, 47);
+			this.notifCont.Name = "notifCont";
+			this.notifCont.Size = new System.Drawing.Size(758, 596);
+			this.notifCont.TabIndex = 16;
+			// 
+			// label12
+			// 
+			this.label12.BackColor = System.Drawing.Color.Transparent;
+			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
+			this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+			this.label12.Location = new System.Drawing.Point(17, 10);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(238, 33);
+			this.label12.TabIndex = 15;
+			this.label12.Text = "Thông báo";
+			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// fuchsiaMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,12 +850,13 @@ namespace fuchsia
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(27)))));
 			this.ClientSize = new System.Drawing.Size(1294, 764);
 			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.home);
-			this.Controls.Add(this.notif);
-			this.Controls.Add(this.message_vchat);
 			this.Controls.Add(this.guna2Panel3);
 			this.Controls.Add(this.navBar);
 			this.Controls.Add(this.titleBar);
+			this.Controls.Add(this.notifBox);
+			this.Controls.Add(this.home);
+			this.Controls.Add(this.notif);
+			this.Controls.Add(this.message_vchat);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "fuchsiaMain";
@@ -818,6 +876,7 @@ namespace fuchsia
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.flowLayoutPanel2.ResumeLayout(false);
+			this.notifBox.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -862,16 +921,20 @@ namespace fuchsia
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2PictureBox cover;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2PictureBox avatar;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
-        private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton2;
         private Guna.UI2.WinForms.Guna2GradientCircleButton guna2GradientCircleButton1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label totalTime;
         private System.Windows.Forms.Label timeProg;
         private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2CircleButton playlistBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton loopBtn;
+        private System.Windows.Forms.Panel notifBox;
+        private System.Windows.Forms.FlowLayoutPanel notifCont;
+        private System.Windows.Forms.Label label12;
 	}
 }
 

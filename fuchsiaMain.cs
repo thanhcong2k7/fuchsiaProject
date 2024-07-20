@@ -27,10 +27,13 @@ namespace fuchsia
 			InitializeComponent();
 			player.controls.stop();
 			//init player
-			totaltimeMusic = Convert.ToInt32(Math.Floor(player.currentMedia.duration));
-			MessageBox.Show(player.currentMedia.duration.ToString());
-			string minutes = Convert.ToInt32(totaltimeMusic/60).ToString();
+			WindowsMediaPlayerClass wmp = new WindowsMediaPlayerClass();
+			IWMPMedia mediaInfo = wmp.newMedia("./Data/videoplayback.mp3");
+			//MessageBox.Show(mediaInfo.duration.ToString());
+			totaltimeMusic = Convert.ToInt32(Math.Floor(mediaInfo.duration));
+			string minutes = Convert.ToInt32(mediaInfo.duration/60).ToString();
 			totalTime.Text = (minutes.Length>1?minutes:"0"+minutes) + ":" + (totaltimeMusic-Convert.ToInt32(totaltimeMusic/60)*60).ToString();
+			notifCont.Controls.Add(new notifItem("hai ngu hai ngu hai ngu"));
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
             //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
@@ -126,6 +129,7 @@ namespace fuchsia
             notiBtn.FillColor = Color.FromArgb(65, 66, 67);
             homeBtn.FillColor = Color.Transparent;
             msgBtn.FillColor = Color.Transparent;
+            notifBox.BringToFront();
         }
 
         private void postContainer_Scroll(object sender, MouseEventArgs e)
@@ -211,6 +215,10 @@ namespace fuchsia
 		void Guna2GradientCircleButton2Click(object sender, EventArgs e)
 		{
 			player.controls.pause();
+		}
+		void Guna2CircleButton3Click(object sender, EventArgs e)
+		{
+	
 		}
 	}
 }

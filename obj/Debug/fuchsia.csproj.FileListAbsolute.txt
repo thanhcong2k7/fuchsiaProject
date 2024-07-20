@@ -35,3 +35,4 @@ D:\fuchsiaProject\obj\Debug\fuchsia.pdb
 D:\fuchsiaProject\bin\Debug\Interop.WMPLib.dll
 D:\fuchsiaProject\obj\Debug\Interop.WMPLib.dll
 D:\fuchsiaProject\obj\Debug\fuchsia.csproj.ResolveComReference.cache
+D:\fuchsiaProject\obj\Debug\fuchsia.notifItem.resources

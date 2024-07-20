@@ -118,11 +118,24 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2GradientCircleButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="playlistBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAFZJREFUWEft
-        lrEJACAMBDOIa7n/KNFoEIyCYGEhd/BNXp4rFQA4oap5k+T1wG7hTYvX99SRHcuw3Xo14/U9vhNBAAEE
-        EEAAAQQQeCpgwzHvvmQAnyNSAFYTk7JeuYJGAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAL5JREFUSEvt
+        lDEKwjAUhuPmqnMp2MELeBbFoVAnL9DBI3iHHsZNJy/g4FWMX8oLT7CBFAwq5IMPmh9eHknoM5nfwVrb
+        oaeTuIf1ElcjnEqpQjjYgO8FPvo0nqOUK4ShBhPc4j7SHRZSrhCW6I9YSpxRuJYa3Ts4a4k/h2zseX3k
+        GZ7xHukN11KuEIYazPGE10gvuJFyhTDtFf0/XEvaH41NQ4/sRkWDh0hbHBwVoQZph52DdYHVCN/HdeZL
+        GPMEHQEzEBOPn/UAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="loopBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAVNJREFUSEvt
+        k70uRFEURm8iJsRPQjSikigoPIGo6HS8AzoRidoDaFQeQK8QnVbDiKDQqOiJMZGIiGPtfT5uJgrn3hwV
+        K1mZOd93956Zm7nFP0YIYRu7dMwPy40jHFKUl7jfucEpxfmIu794wHlVnVA0cAWburAub7imtRGCMTy3
+        NgP2ARta7ct78NIauMUlHFH9Iz5VYr98VlWEYN2rEO5wWHEycdS5xgnFJYR2z41FRZXQ7CEO6jyJu14a
+        HNpoDCiqBHM76A8ar334hG0vDQ7PCnt1tn9T08uKMNePRkuRh3s4rff28x4xeFkRxhZsFo4VlRBa+eo1
+        KE6GEbs9Vz4cwqriCMEWvnslVCXB5TN44oPxeWqo8nLf4+/YfzrFFn5yhqNaHSE48Ko+L3iKy9ittZ1Q
+        bGLtW5QEO+fQvo2jOC/sHcf7X/sAg932oF3o+Kcpig/rMaDPVjmCLQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="guna2GradientCircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -18683,7 +18696,7 @@
     <value>487, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>29</value>
+    <value>33</value>
   </metadata>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

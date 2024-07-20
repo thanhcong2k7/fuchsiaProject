@@ -18,8 +18,10 @@ namespace fuchsia
 		static void Main()
 		{
 			//Blur fix when upscale
+			/*
 			if (Environment.OSVersion.Version.Major >= 6)
             	SetProcessDPIAware();
+            */
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//Check host
