@@ -270,5 +270,9 @@ namespace fuchsia
 		{
 			(new openImg(picBox.Image)).Show();
 		}
+		void SavePostClick(object sender, EventArgs e)
+		{
+			//query add post to list
+		}
 	}
 }

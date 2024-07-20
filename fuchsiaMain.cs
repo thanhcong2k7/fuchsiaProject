@@ -5,11 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Diagnostics;
 using System.Net;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
+//using System.Timers;
 using WMPLib;
 namespace fuchsia
 {
@@ -18,22 +19,41 @@ namespace fuchsia
 		public string userID = "abcxyz";
 		public string userName = "Nguyễn Thành Công";
 		private string usr_ = "", pwd_ = "";
+		public bool notifStatus = true;
 		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
 		//System.Media.SoundPlayer player = new System.Media.SoundPlayer(){SoundLocation = "./Data/videoplayback.m4a"};
 		WindowsMediaPlayer player = new WindowsMediaPlayer(){URL = "./Data/videoplayback.mp3"};
 		public int timeMusic=0, totaltimeMusic=0;
+		private Timer aTimer = new Timer(){Interval = 1000};
 		public fuchsiaMain(string user, string passw)
 		{
 			InitializeComponent();
 			player.controls.stop();
-			//init player
+			//init player and its stuffs
 			WindowsMediaPlayerClass wmp = new WindowsMediaPlayerClass();
 			IWMPMedia mediaInfo = wmp.newMedia("./Data/videoplayback.mp3");
 			//MessageBox.Show(mediaInfo.duration.ToString());
 			totaltimeMusic = Convert.ToInt32(Math.Floor(mediaInfo.duration));
 			string minutes = Convert.ToInt32(mediaInfo.duration/60).ToString();
-			totalTime.Text = (minutes.Length>1?minutes:"0"+minutes) + ":" + (totaltimeMusic-Convert.ToInt32(totaltimeMusic/60)*60).ToString();
-			notifCont.Controls.Add(new notifItem("hai ngu hai ngu hai ngu"));
+			totalTime.Text = (minutes.Length > 1 ? minutes : "0" + minutes) + ":"
+							 + (totaltimeMusic - Convert.ToInt32(totaltimeMusic / 60) * 60);
+			aTimer.Tick += (Object obj, EventArgs e) => {
+				timeMusic++;
+				string minn = (timeMusic / 60).ToString();
+				string secs = (timeMusic - Convert.ToInt32(timeMusic / 60) * 60).ToString();
+				timeProg.Text = (minn.Length > 1 ? minn : "0" + minn) + ":" + (secs.Length > 1 ? secs : "0" + secs);
+				progBar.Value = Convert.ToInt32((Convert.ToDouble(timeMusic) / Convert.ToDouble(totaltimeMusic)) * 100);
+				if (timeMusic >= totaltimeMusic || player.playState != WMPPlayState.wmppsPlaying || progBar.Value == 100) {
+					timeMusic = 0;
+					nextsongfunc();
+				}
+				Debug.WriteLine(Convert.ToInt32((Convert.ToDouble(timeMusic) / Convert.ToDouble(totaltimeMusic)) * 100));
+			};
+			
+			//
+			//notif stuff
+			//
+			notifCont.Controls.Add(new notifItem("hai ngu hai ngu hai ngu"){Cursor = Cursors.Hand});
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi; // fix blurry
 			//initPost("test",userName,getUTC_Time());
             //initPost("test xd", userName, "00:00 00/00/0000");//, Image.FromFile("testImg/ab.jpg"));
@@ -51,11 +71,82 @@ namespace fuchsia
             semibg.Hide();
             //chooseTab_state.Location = new Point(homeBtn.Location.X, homeBtn.Location.Y + msgBtn.Size.Height);
 			this.MaximumSize = Screen.PrimaryScreen.WorkingArea.Size;
+			
+			//
+			//Scroll bar stuffs
+			//
+			//scrollBar.Maximum = postContainer.VerticalScroll.Maximum;
 			postContainer.VerticalScroll.Visible = true;
 			postContainer.WrapContents = true;
 			postContainer.AutoScroll = true;
 		}
-
+		public void nextsongfunc(){
+			//bruh no idea
+			progBar.Value = 0;
+			timeMusic = 0;
+			aTimer.Enabled = false;
+			playBtn.Image = fuchsia.Properties.Resources.play;
+			timeProg.Text = "00:00";
+		}
+		public static string getFinalRedirect(string url)
+	    {
+	        if(string.IsNullOrWhiteSpace(url))
+	            return url;
+	
+	        int maxRedirCount = 8;  // prevent infinite loops
+	        string newUrl = url;
+	        do
+	        {
+	            HttpWebRequest req = null;
+	            HttpWebResponse resp = null;
+	            try
+	            {
+	                req = (HttpWebRequest) HttpWebRequest.Create(url);
+	                req.Method = "HEAD";
+	                req.AllowAutoRedirect = false;
+	                resp = (HttpWebResponse)req.GetResponse();
+	                switch (resp.StatusCode)
+	                {
+	                    case HttpStatusCode.OK:
+	                        return newUrl;
+	                    case HttpStatusCode.Redirect:
+	                    case HttpStatusCode.MovedPermanently:
+	                    case HttpStatusCode.RedirectKeepVerb:
+	                    case HttpStatusCode.RedirectMethod:
+	                        newUrl = resp.Headers["Location"];
+	                        if (newUrl == null)
+	                            return url;
+	
+	                        if (newUrl.IndexOf("://", System.StringComparison.Ordinal) == -1)
+	                        {
+	                            // Doesn't have a URL Schema, meaning it's a relative or absolute URL
+	                            Uri u = new Uri(new Uri(url), newUrl);
+	                            newUrl = u.ToString();
+	                        }
+	                        break;
+	                    default:
+	                        return newUrl;
+	                }
+	                url = newUrl;
+	            }
+	            catch (WebException)
+	            {
+	                // Return the last known good URL
+	                return newUrl;
+	            }
+	            catch (Exception ex)
+	            {
+	                return null;
+	            }
+	            finally
+	            {
+	                if (resp != null)
+	                    resp.Close();
+	            }
+	        } while (maxRedirCount-- > 0);
+	
+	        return newUrl;
+	    }
 		private void guna2Button1_Click(object sender, EventArgs e)
 		{
 			//logout stuff
@@ -130,6 +221,7 @@ namespace fuchsia
             homeBtn.FillColor = Color.Transparent;
             msgBtn.FillColor = Color.Transparent;
             notifBox.BringToFront();
+            notifCont.Controls.Add(new notifItem("hai ngu hai ngu hai ngu"){Cursor = Cursors.Hand});
         }
 
         private void postContainer_Scroll(object sender, MouseEventArgs e)
@@ -180,26 +272,7 @@ namespace fuchsia
 				isSet = !isSet;
 			}
 		}
-		void Guna2Button6Click(object sender, EventArgs e)
-		{
-			(new viewProfile(userID)).Show();
-		}
-		void TagCtrlMouseClick(object sender, MouseEventArgs e)
-		{
-			(new viewProfile(userID)).Show();
-		}
-		void NameTxtMouseClick(object sender, MouseEventArgs e)
-		{
-			(new viewProfile(userID)).Show();
-		}
-		void HandleLnkMouseClick(object sender, MouseEventArgs e)
-		{
-			(new viewProfile(userID)).Show();
-		}
-		void Guna2CirclePictureBox1MouseClick(object sender, MouseEventArgs e)
-		{
-			(new viewProfile(userID)).Show();
-		}
+		
 		Size bk = new Size();
 		void MaximizeBtnClick(object sender, EventArgs e)
 		{
@@ -210,15 +283,48 @@ namespace fuchsia
 		}
 		void Guna2GradientCircleButton1Click(object sender, EventArgs e)
 		{
-			player.controls.play();
+			if (player.playState != WMPPlayState.wmppsPlaying){
+				player.controls.play();
+				aTimer.Enabled = true;
+				playBtn.Image = fuchsia.Properties.Resources.pause;
+			} else {
+				player.controls.pause();
+				aTimer.Enabled = false;
+				playBtn.Image = fuchsia.Properties.Resources.play;
+			}
 		}
-		void Guna2GradientCircleButton2Click(object sender, EventArgs e)
+		void Guna2GradientButton1Click(object sender, EventArgs e)
 		{
-			player.controls.pause();
+			if (notifStatus){
+				notifBub.Text = "Notification disabled";
+				notifBub.Image = fuchsia.Properties.Resources.blocknotif;
+				notifStatus = false;
+			}else if (!notifStatus){
+				notifBub.Text = "Notification enabled";
+				notifBub.Image = fuchsia.Properties.Resources.allownotif;
+				notifStatus = true;
+			}
 		}
-		void Guna2CircleButton3Click(object sender, EventArgs e)
+		void ProgBarValueChanged(object sender, EventArgs e)
 		{
-	
+			if (changedbyhooman){
+				bool ee = false;
+				if (!aTimer.Enabled) ee = true; else {aTimer.Enabled = false; player.controls.pause();}
+				timeMusic = Convert.ToInt32((Convert.ToDouble(val)/100)*totaltimeMusic);
+				string minn = (timeMusic / 60).ToString();
+				string secs = (timeMusic - Convert.ToInt32(timeMusic / 60) * 60).ToString();
+				timeProg.Text = (minn.Length > 1 ? minn : "0" + minn) + ":" + (secs.Length > 1 ? secs : "0" + secs);
+				player.controls.currentPosition = Convert.ToInt32(timeMusic);
+				if(!ee) {aTimer.Enabled = true; player.controls.play();}
+				changedbyhooman = false;
+			}
+		}
+		bool changedbyhooman = false;
+		int val = 0;
+		void ProgBarMouseCaptureChanged(object sender, EventArgs e)
+		{
+			changedbyhooman = true;
+			val = progBar.Value;
 		}
 	}
 }

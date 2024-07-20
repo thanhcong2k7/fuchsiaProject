@@ -24,7 +24,8 @@ namespace fuchsia
 	{
 		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
 		private string viewID = "";
-		public viewProfile(string ID)
+		private string pfID = "";
+		public viewProfile(string ID, string broitsme)
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -34,6 +35,7 @@ namespace fuchsia
 			post.AutoScroll = true;
 			post.VerticalScroll.Visible = true;
 			viewID = ID;
+			pfID = broitsme;
 			resizeImage(cover.Image, (new Size(avatar.Size.Width,avatar.Size.Height)));
 			//
 			handle_tip.SetToolTip(handle,"Bấm để sao chép");
@@ -55,6 +57,27 @@ namespace fuchsia
 			postCont1.avatar = avatar.Image;
 			//
 			appName.Text = "fuchsia " + a.Version.ToString() + " - preview";
+			//
+			// Check relationship or idk
+			//
+			//1 query added or not or waiting
+			//1 = not, 2 = waiting, 3 = added
+			int status = 1;
+			if (status == 1){
+				addfrBtn.Text = "Thêm bạn";
+				addfrBtn.Image = fuchsia.Properties.Resources.addf;
+			} else if (status==2){
+				addfrBtn.Text = "Hủy lời mời";
+				addfrBtn.Image = fuchsia.Properties.Resources.unf;
+			} else if (status==3){
+				addfrBtn.Text = "Xóa bạn bè";
+				addfrBtn.Image = fuchsia.Properties.Resources.unf;
+			}
+			//2 followed or not? T or F
+			bool fl = true;
+			if (fl)
+				flBtn.Image = fuchsia.Properties.Resources.follow;
+			else flBtn.Image = fuchsia.Properties.Resources.unfl;
 			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.

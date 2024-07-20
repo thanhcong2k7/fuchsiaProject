@@ -18,6 +18,7 @@ namespace fuchsia
 	/// </summary>
 	public partial class notifItem : UserControl
 	{
+		int notifID = 0;
 		public notifItem(string title)
 		{
 			//
@@ -29,6 +30,14 @@ namespace fuchsia
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+		}
+		void Guna2CircleButton1Click(object sender, EventArgs e)
+		{
+			//delete notif stuff: query delete from database; dispose
+			//query
+			//dispose
+			this.Hide();
+			this.Dispose();
 		}
 	}
 }

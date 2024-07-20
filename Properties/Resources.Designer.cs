@@ -63,6 +63,46 @@ namespace fuchsia.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
+		internal static System.Drawing.Bitmap addf {
+			get {
+				object obj = ResourceManager.GetObject("addf", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap allownotif {
+			get {
+				object obj = ResourceManager.GetObject("allownotif", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap blocknotif {
+			get {
+				object obj = ResourceManager.GetObject("blocknotif", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap comment {
+			get {
+				object obj = ResourceManager.GetObject("comment", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
 		internal static System.Drawing.Bitmap delete {
 			get {
 				object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -76,6 +116,16 @@ namespace fuchsia.Properties {
 		internal static System.Drawing.Bitmap delete2 {
 			get {
 				object obj = ResourceManager.GetObject("delete2", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap follow {
+			get {
+				object obj = ResourceManager.GetObject("follow", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
@@ -173,6 +223,16 @@ namespace fuchsia.Properties {
 		/// <summary>
 		///   Looks up a localized resource of type System.Drawing.Bitmap.
 		/// </summary>
+		internal static System.Drawing.Bitmap post {
+			get {
+				object obj = ResourceManager.GetObject("post", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
 		internal static System.Drawing.Bitmap prev {
 			get {
 				object obj = ResourceManager.GetObject("prev", resourceCulture);
@@ -226,6 +286,26 @@ namespace fuchsia.Properties {
 		internal static System.Drawing.Bitmap speaker {
 			get {
 				object obj = ResourceManager.GetObject("speaker", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap unf {
+			get {
+				object obj = ResourceManager.GetObject("unf", resourceCulture);
+				return ((System.Drawing.Bitmap)(obj));
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized resource of type System.Drawing.Bitmap.
+		/// </summary>
+		internal static System.Drawing.Bitmap unfl {
+			get {
+				object obj = ResourceManager.GetObject("unfl", resourceCulture);
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}

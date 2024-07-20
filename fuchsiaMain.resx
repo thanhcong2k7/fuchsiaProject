@@ -138,7 +138,7 @@
         bGLtW5QEO+fQvo2jOC/sHcf7X/sAg932oF3o+Kcpig/rMaDPVjmCLQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="guna2GradientCircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="playBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAXlJREFUWEft
         lr8rRWEYx+8lLH6N0p0UGUVGg7IY2O5qtBqtMpkNyt+gLEaDZFXYlJQySCksfiQen+fHGXQjnXveI3U+
@@ -150,7 +150,7 @@
         //ZPaUVFOmq1T1AYGlEKPQQtAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="guna2CircleButton3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="nextsong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAARdJREFUSEvt
         lS9rAnEYx0/UoAwF4wwDwbKoWFZWrvkStmDyLawafQsKJpvFbDIYDK4KC4LBYBQFy8Z2fh557srJPB/P
@@ -160,7 +160,7 @@
         FIKZOUDoYU7bJ2FuCuhjpGe8NeCSP5xHrGp551Ic5wBLjMi8egrOGgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="guna2CircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="prevsong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAASpJREFUSEvt
         lT9LQlEYh29UgyEFjTkIQYurOLU02NRXEPoIja2NfoUQXNqcXJ1cHBxsrSmClsYiCMSo0/Mef1cKyXs6
@@ -18696,7 +18696,7 @@
     <value>487, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>33</value>
+    <value>25</value>
   </metadata>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
