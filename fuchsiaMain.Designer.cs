@@ -83,6 +83,11 @@ namespace fuchsia
 			this.notifBub = new Guna.UI2.WinForms.Guna2GradientButton();
 			this.notifCont = new System.Windows.Forms.FlowLayoutPanel();
 			this.label12 = new System.Windows.Forms.Label();
+			this.playlistPanel = new Guna.UI2.WinForms.Guna2Panel();
+			this.label13 = new System.Windows.Forms.Label();
+			this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+			this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+			this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
 			this.navBar.SuspendLayout();
 			this.titleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
@@ -95,6 +100,7 @@ namespace fuchsia
 			this.message_vchat.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.notifBox.SuspendLayout();
+			this.playlistPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// navBar
@@ -174,6 +180,7 @@ namespace fuchsia
 			this.playlistBtn.ShadowDecoration.Parent = this.playlistBtn;
 			this.playlistBtn.Size = new System.Drawing.Size(40, 40);
 			this.playlistBtn.TabIndex = 25;
+			this.playlistBtn.Click += new System.EventHandler(this.PlaylistBtnClick);
 			// 
 			// loopBtn
 			// 
@@ -192,6 +199,7 @@ namespace fuchsia
 			this.loopBtn.ShadowDecoration.Parent = this.loopBtn;
 			this.loopBtn.Size = new System.Drawing.Size(40, 40);
 			this.loopBtn.TabIndex = 24;
+			this.loopBtn.Click += new System.EventHandler(this.LoopBtnClick);
 			// 
 			// playBtn
 			// 
@@ -867,12 +875,103 @@ namespace fuchsia
 			this.label12.Text = "Thông báo";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// playlistPanel
+			// 
+			this.playlistPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.playlistPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(27)))));
+			this.playlistPanel.BorderRadius = 10;
+			this.playlistPanel.Controls.Add(this.label13);
+			this.playlistPanel.Controls.Add(this.guna2GradientButton2);
+			this.playlistPanel.Controls.Add(this.guna2Panel2);
+			this.playlistPanel.Controls.Add(this.guna2TextBox1);
+			this.playlistPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+			this.playlistPanel.Location = new System.Drawing.Point(963, 321);
+			this.playlistPanel.Name = "playlistPanel";
+			this.playlistPanel.ShadowDecoration.Parent = this.playlistPanel;
+			this.playlistPanel.Size = new System.Drawing.Size(319, 368);
+			this.playlistPanel.TabIndex = 27;
+			// 
+			// label13
+			// 
+			this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+			this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label13.ForeColor = System.Drawing.Color.White;
+			this.label13.Location = new System.Drawing.Point(12, 6);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(275, 23);
+			this.label13.TabIndex = 19;
+			this.label13.Text = "fuchsia.Playlist: Add/Remove songs from queue";
+			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// guna2GradientButton2
+			// 
+			this.guna2GradientButton2.Animated = true;
+			this.guna2GradientButton2.AutoRoundedCorners = true;
+			this.guna2GradientButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+			this.guna2GradientButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2GradientButton2.BorderRadius = 12;
+			this.guna2GradientButton2.BorderThickness = 1;
+			this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
+			this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
+			this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(50)))), ((int)(((byte)(77)))));
+			this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(90)))), ((int)(((byte)(131)))));
+			this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+			this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
+			this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
+			this.guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+			this.guna2GradientButton2.Location = new System.Drawing.Point(266, 32);
+			this.guna2GradientButton2.Name = "guna2GradientButton2";
+			this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
+			this.guna2GradientButton2.Size = new System.Drawing.Size(39, 26);
+			this.guna2GradientButton2.TabIndex = 18;
+			this.guna2GradientButton2.Tag = "Add from local";
+			// 
+			// guna2Panel2
+			// 
+			this.guna2Panel2.Location = new System.Drawing.Point(12, 64);
+			this.guna2Panel2.Name = "guna2Panel2";
+			this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+			this.guna2Panel2.Size = new System.Drawing.Size(293, 292);
+			this.guna2Panel2.TabIndex = 1;
+			// 
+			// guna2TextBox1
+			// 
+			this.guna2TextBox1.Animated = true;
+			this.guna2TextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+			this.guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2TextBox1.BorderRadius = 10;
+			this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.guna2TextBox1.DefaultText = "";
+			this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+			this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+			this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+			this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+			this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(36)))), ((int)(((byte)(37)))));
+			this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+			this.guna2TextBox1.ForeColor = System.Drawing.Color.White;
+			this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+			this.guna2TextBox1.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconLeft")));
+			this.guna2TextBox1.Location = new System.Drawing.Point(12, 32);
+			this.guna2TextBox1.Name = "guna2TextBox1";
+			this.guna2TextBox1.PasswordChar = '\0';
+			this.guna2TextBox1.PlaceholderText = "";
+			this.guna2TextBox1.SelectedText = "";
+			this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+			this.guna2TextBox1.Size = new System.Drawing.Size(248, 26);
+			this.guna2TextBox1.TabIndex = 0;
+			this.guna2TextBox1.Tag = "YouTube link here:";
+			// 
 			// fuchsiaMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(27)))));
 			this.ClientSize = new System.Drawing.Size(1294, 764);
+			this.Controls.Add(this.playlistPanel);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.guna2Panel3);
 			this.Controls.Add(this.navBar);
@@ -899,6 +998,7 @@ namespace fuchsia
 			this.message_vchat.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.notifBox.ResumeLayout(false);
+			this.playlistPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -956,6 +1056,11 @@ namespace fuchsia
         private Guna.UI2.WinForms.Guna2CircleButton again;
         private Guna.UI2.WinForms.Guna2GradientButton notifBub;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2Panel playlistPanel;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
 	}
 }
 

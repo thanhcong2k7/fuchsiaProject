@@ -60,6 +60,7 @@ namespace fuchsia
 				aboutBtn.Text = "";
 			}
 			//accSet.Location = new Point();
+			hostTxt = "bruh what the fuck";
 		}
 		void Guna2Button2Click(object sender, EventArgs e)
 		{

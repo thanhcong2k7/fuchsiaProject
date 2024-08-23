@@ -26,6 +26,7 @@ namespace fuchsia
 			//
 			InitializeComponent();
 			caption.Text = title;
+			notifID = 0;
 			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
