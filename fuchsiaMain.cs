@@ -74,8 +74,8 @@ namespace fuchsia
 		    audioFile = new AudioFileReader(@".\Data\videoplayback.mp3");
 		    outputDevice.Init(audioFile);
 			//MessageBox.Show(mediaInfo.duration.ToString());
-			totaltimeMusic = Convert.ToInt32(Math.Floor(Convert.ToDouble(audioFile.TotalTime.Seconds)));
-			string minutes = Convert.ToInt32(audioFile.TotalTime.Seconds/60).ToString();
+			totaltimeMusic = audioFile.TotalTime.Seconds;
+			string minutes = (audioFile.TotalTime.Minutes).ToString();
 			totalTime.Text = (minutes.Length > 1 ? minutes : "0" + minutes) + ":"
 							 + (totaltimeMusic - Convert.ToInt32(totaltimeMusic / 60) * 60);
 			aTimer.Tick += (Object obj, EventArgs e) => {
