@@ -11,7 +11,8 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using WMPLib;
+using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 //using System.Timers;
 namespace fuchsia
 {
@@ -48,7 +49,9 @@ namespace fuchsia
 		public bool notifStatus = true;
 		private AssemblyInfo a = new AssemblyInfo(Assembly.GetEntryAssembly());
 		//System.Media.SoundPlayer player = new System.Media.SoundPlayer(){SoundLocation = "./Data/videoplayback.m4a"};
-		WindowsMediaPlayer player = new WindowsMediaPlayer(){URL = "./Data/videoplayback.mp3"};
+		//WindowsMediaPlayer player = new WindowsMediaPlayer(){URL = "./Data/videoplayback.mp3"};
+		private WaveOutEvent outputDevice;
+    	private AudioFileReader audioFile;
 		public int timeMusic=0, totaltimeMusic=0;
 		private Timer aTimer = new Timer(){Interval = 1000};
 		public enum IconSize
@@ -64,14 +67,15 @@ namespace fuchsia
 		public fuchsiaMain(string user, string passw)
 		{
 			InitializeComponent();
-			player.controls.stop();
 			playlistPanel.Visible = false;
 			//init player and its stuffs
-			WindowsMediaPlayerClass wmp = new WindowsMediaPlayerClass();
-			IWMPMedia mediaInfo = wmp.newMedia("./Data/videoplayback.mp3");
+			outputDevice = new WaveOutEvent();
+		    outputDevice.PlaybackStopped += OnPlaybackStopped;
+		    audioFile = new AudioFileReader(@".\Data\videoplayback.mp3");
+		    outputDevice.Init(audioFile);
 			//MessageBox.Show(mediaInfo.duration.ToString());
-			totaltimeMusic = Convert.ToInt32(Math.Floor(mediaInfo.duration));
-			string minutes = Convert.ToInt32(mediaInfo.duration/60).ToString();
+			totaltimeMusic = Convert.ToInt32(Math.Floor(Convert.ToDouble(audioFile.TotalTime.Seconds)));
+			string minutes = Convert.ToInt32(audioFile.TotalTime.Seconds/60).ToString();
 			totalTime.Text = (minutes.Length > 1 ? minutes : "0" + minutes) + ":"
 							 + (totaltimeMusic - Convert.ToInt32(totaltimeMusic / 60) * 60);
 			aTimer.Tick += (Object obj, EventArgs e) => {
@@ -80,7 +84,7 @@ namespace fuchsia
 				string secs = (timeMusic - Convert.ToInt32(timeMusic / 60) * 60).ToString();
 				timeProg.Text = (minn.Length > 1 ? minn : "0" + minn) + ":" + (secs.Length > 1 ? secs : "0" + secs);
 				progBar.Value = Convert.ToInt32((Convert.ToDouble(timeMusic) / Convert.ToDouble(totaltimeMusic)) * 100);
-				if (timeMusic >= totaltimeMusic || player.playState != WMPPlayState.wmppsPlaying || progBar.Value == 100) {
+				if (timeMusic >= totaltimeMusic || outputDevice.PlaybackState != PlaybackState.Stopped || progBar.Value == 100) {
 					timeMusic = 0;
 					nextsongfunc();
 				}
@@ -319,15 +323,23 @@ namespace fuchsia
 		}
 		void Guna2GradientCircleButton1Click(object sender, EventArgs e)
 		{
-			if (player.playState != WMPPlayState.wmppsPlaying){
-				player.controls.play();
+			if (outputDevice.PlaybackState == PlaybackState.Stopped){
+				outputDevice.Play();
 				aTimer.Enabled = true;
 				playBtn.Image = fuchsia.Properties.Resources.pause;
 			} else {
-				player.controls.pause();
+				outputDevice.Pause();
 				aTimer.Enabled = false;
 				playBtn.Image = fuchsia.Properties.Resources.play;
 			}
+		    
+		}
+		private void OnPlaybackStopped(object sender, StoppedEventArgs args)
+		{
+		    outputDevice.Dispose();
+		    outputDevice = null;
+		    audioFile.Dispose();
+		    audioFile = null;
 		}
 		void Guna2GradientButton1Click(object sender, EventArgs e)
 		{
@@ -345,13 +357,13 @@ namespace fuchsia
 		{
 			if (changedbyhooman){
 				bool ee = false;
-				if (!aTimer.Enabled) ee = true; else {aTimer.Enabled = false; player.controls.pause();}
+				if (!aTimer.Enabled) ee = true; else {aTimer.Enabled = false; outputDevice.Pause();}
 				timeMusic = Convert.ToInt32((Convert.ToDouble(val)/100)*totaltimeMusic);
 				string minn = (timeMusic / 60).ToString();
 				string secs = (timeMusic - Convert.ToInt32(timeMusic / 60) * 60).ToString();
 				timeProg.Text = (minn.Length > 1 ? minn : "0" + minn) + ":" + (secs.Length > 1 ? secs : "0" + secs);
-				player.controls.currentPosition = Convert.ToInt32(timeMusic);
-				if(!ee) {aTimer.Enabled = true; player.controls.play();}
+				//outputDevice. = Convert.ToInt32(timeMusic);
+				if(!ee) {aTimer.Enabled = true; outputDevice.Play();}
 				changedbyhooman = false;
 			}
 		}
@@ -361,6 +373,7 @@ namespace fuchsia
 		{
 			changedbyhooman = true;
 			val = progBar.Value;
+			Debug.WriteLine("sus");
 		}
 		void PlaylistBtnClick(object sender, EventArgs e)
 		{
